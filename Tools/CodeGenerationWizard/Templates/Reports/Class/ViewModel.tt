@@ -1,0 +1,40 @@
+﻿<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#
+    // Locals
+    var moduleId = settings.ModuleId;
+    var copyright = settings.Copyright;
+    var companyNamespace = settings.CompanyNamespace;
+    var modelName = view.Properties[BusinessView.ModelName];
+    var entityName = view.Properties[BusinessView.EntityName];
+
+    var webModuleNamespace = settings.DoesAreasExist ? "Web.Areas." + moduleId : moduleId + ".Web";
+#>
+// <#=copyright#>
+
+#region Namespace
+
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.ComponentModel.DataAnnotations;
+using <#=companyNamespace#>.<#=moduleId#>.Models.Reports;
+using Sage.CA.SBS.ERP.Sage300.Common.Models;
+using Sage.CA.SBS.ERP.Sage300.Common.Models.Process;
+using Sage.CA.SBS.ERP.Sage300.Common.Web.Models.Reports;
+
+#endregion
+
+namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Models.Reports
+{
+    /// <summary>
+    /// ViewModel for <#=entityName#>
+    /// </summary>
+    /// <typeparam name="T"><#=modelName#></typeparam>
+    public class <#=entityName#>ViewModel<T> : ReportViewModel<T> where T : <#=modelName#>, new()
+    {
+
+    }
+}

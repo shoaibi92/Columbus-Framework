@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{266375DE-AFFE-47E2-8AD2-D34B018E91DB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository</RootNamespace>
+    <AssemblyName>Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\Solutions\Dev\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <WebGreaseLibPath>..\..\..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>$(SolutionDir)..\Assemblies</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)..\Assemblies</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseDev|AnyCPU'">
+    <OutputPath>bin\ReleaseDev\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseDev|x86'">
+    <OutputPath>bin\x86\ReleaseDev\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ACCPAC.Advantage, Version=6.3.0.0, Culture=neutral, PublicKeyToken=4d7048ecf2312a7c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\assembly\GAC_MSIL\ACCPAC.Advantage\6.3.0.0__4d7048ecf2312a7c\ACCPAC.Advantage.dll</HintPath>
+    </Reference>
+    <Reference Include="ACCPAC.Advantage.Types, Version=6.3.0.0, Culture=neutral, PublicKeyToken=4d7048ecf2312a7c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\assembly\GAC_MSIL\ACCPAC.Advantage.Types\6.3.0.0__4d7048ecf2312a7c\ACCPAC.Advantage.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="dotless.Core, Version=1.4.0.0, Culture=neutral, PublicKeyToken=96b446c9e63eae34, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\dotless.1.4.0.0\lib\dotless.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
+      <HintPath>..\..\..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.2\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization.Less, Version=1.3.0.0, Culture=neutral, PublicKeyToken=9b7581e0240fe480, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Web.Optimization.Less.1.3.3\lib\net40\System.Web.Optimization.Less.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BaseDbContext.cs" />
+    <Compile Include="Base\BaseReportRepository.cs" />
+    <Compile Include="Base\DynamicQueryRepository.cs" />
+    <Compile Include="Base\InquiryRepository.cs" />
+    <Compile Include="Base\OrderedHeaderDetailRepositoy.cs" />
+    <Compile Include="Base\SequencedHeaderDetailThreeRepository.cs" />
+    <Compile Include="Base\SequenceHeaderDetailRepository.cs" />
+    <Compile Include="Base\Statefull\BatchHeaderDetailRepository.cs" />
+    <Compile Include="Base\CommonRepository.cs" />
+    <Compile Include="Base\FlatRepository.cs" />
+    <Compile Include="Base\CacheableRepository.cs" />
+    <Compile Include="Base\BaseRepository.cs" />
+    <Compile Include="Base\Statefull\OrderedHeaderDetailRepository.cs" />
+    <Compile Include="Base\ProcessingRepository.cs" />
+    <Compile Include="Base\Statefull\SequencedHeaderDetailFiveRepository.cs" />
+    <Compile Include="Base\Statefull\SequencedHeaderDetailRepository.cs" />
+    <Compile Include="BillToLocationRepository.cs" />
+    <Compile Include="BusinessEntity.cs" />
+    <Compile Include="BusinessEntitySession.cs" />
+    <Compile Include="BusinessEntitySessionParams.cs" />
+    <Compile Include="BusinessPoolManager.cs" />
+    <Compile Include="Email\EmailRepository.cs" />
+    <Compile Include="GLIntegration\BaseGLReferenceIntegrationRepository.cs" />
+    <Compile Include="InvoiceEntry\BaseInvoiceEntryRepository.cs" />
+    <Compile Include="InvoiceEntry\POOEBaseInvEntryRepository.cs" />
+    <Compile Include="IReportMapper.cs" />
+    <Compile Include="Landlord\LandlordConfiguration.cs" />
+    <Compile Include="Landlord\LandlordDbContext.cs" />
+    <Compile Include="Landlord\LandlordRepository.cs" />
+    <Compile Include="Landlord\LandlordRepositoryBase.cs" />
+    <Compile Include="Landlord\LandlordRepositoryOnPremise.cs" />
+    <Compile Include="Mapper\BaseDistributionProrationMapper.cs" />
+    <Compile Include="Mapper\BaseGLReferenceIntegrationMapper.cs" />
+    <Compile Include="Mapper\BaseInvoiceEntryMapper.cs" />
+    <Compile Include="Mapper\DropShipAddressMapper.cs" />
+    <Compile Include="Mapper\BillToLocationMapper.cs" />
+    <Compile Include="Mapper\PaymentInfoMapper.cs" />
+    <Compile Include="Mapper\POOEBaseInvoiceEntryMapper.cs" />
+    <Compile Include="Mapper\POVendorInformationMapper.cs" />
+    <Compile Include="Mapper\Reports\GLTransactionMapper.cs" />
+    <Compile Include="Mapper\PivotColumnMapper.cs" />
+    <Compile Include="Mapper\ReportMapper.cs" />
+    <Compile Include="Menu\AbstractMenuModuleHelper.cs" />
+    <Compile Include="Menu\CoreMenuModuleHelper.cs" />
+    <Compile Include="Menu\MenuModuleHelperManager.cs" />
+    <Compile Include="Menu\MenuRepository.cs" />
+    <Compile Include="ModelHierarchyMapper.cs" />
+    <Compile Include="ModelMapper.cs" />
+    <Compile Include="OrderedHeaderDetailBusinessEntitySet.cs" />
+    <Compile Include="Portal\HelpRepository.cs" />
+    <Compile Include="Portal\MenuSecurityRespository.cs" />
+    <Compile Include="Portal\NavigationRepository.cs" />
+    <Compile Include="Reports\GenericReportRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Revaluation\BaseRevaluationRepository.cs" />
+    <Compile Include="Revaluation\Mappers\RevaluationCompositeMapper.cs" />
+    <Compile Include="Revaluation\Mappers\RevaluationHistoryMapper.cs" />
+    <Compile Include="Revaluation\Mappers\RevaluationEntryMapper.cs" />
+    <Compile Include="Revaluation\Mappers\RevaluationProcessMapper.cs" />
+    <Compile Include="Revaluation\Mappers\RevaluationOptionalFieldMapper.cs" />
+    <Compile Include="SequencedHeaderDetailBusinessEntitySet.cs" />
+    <Compile Include="SequencedHeaderDetailFiveBusinessEntitySet.cs" />
+    <Compile Include="SequencedHeaderDetailThreeBusinessEntitySet.cs" />
+    <Compile Include="Utilities\BaseInvoiceEntryBusinessSet.cs" />
+    <Compile Include="Utilities\BusinessEntitySet.cs" />
+    <Compile Include="Utilities\ExpressionHelper.cs" />
+    <Compile Include="Utilities\ExpressionTranslator.cs" />
+    <Compile Include="Utilities\Helper.cs" />
+    <Compile Include="Utilities\ObjectPool.cs" />
+    <Compile Include="Utilities\OrderByHelper.cs" />
+    <Compile Include="Utilities\POOEBaseInvoiceEntryBusinessSet.cs" />
+    <Compile Include="Utilities\PooledObject.cs" />
+    <Compile Include="ViewResourceEntity.cs" />
+    <Compile Include="ViewResourceRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Sage.CA.SBS.ERP.Sage300.Core.Interfaces\Sage.CA.SBS.ERP.Sage300.Core.Interfaces.csproj">
+      <Project>{798573ff-cf70-471e-91bf-ae86b3f097f5}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Core.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.CA.SBS.ERP.Sage300.Common.Cryptography\Sage.CA.SBS.ERP.Sage300.Common.Cryptography.csproj">
+      <Project>{70f6d5a9-b512-422a-b896-a1778a0781ea}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Cryptography</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.CA.SBS.ERP.Sage300.Common.Exceptions\Sage.CA.SBS.ERP.Sage300.Common.Exceptions.csproj">
+      <Project>{7bf38564-09a6-4943-8249-d0b2a3e04516}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.CA.SBS.ERP.Sage300.Common.Interfaces\Sage.CA.SBS.ERP.Sage300.Common.Interfaces.csproj">
+      <Project>{2df9d920-e05a-44fe-91c7-4fce7b3a2b28}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.CA.SBS.ERP.Sage300.Common.Models\Sage.CA.SBS.ERP.Sage300.Common.Models.csproj">
+      <Project>{74ba53c3-eb09-4226-9985-bad7306db937}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.CA.SBS.ERP.Sage300.Common.Resources\Sage.CA.SBS.ERP.Sage300.Common.Resources.csproj">
+      <Project>{4bb55006-cf24-43b5-800c-3f9a4685be9e}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.CA.SBS.ERP.Sage300.Common.Utilities\Sage.CA.SBS.ERP.Sage300.Common.Utilities.csproj">
+      <Project>{9ce25370-dc66-4d61-87b4-aed9a3dc7bd4}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Sage.CA.SBS.ERP.Sage300.Core.Cache\Sage.CA.SBS.ERP.Sage300.Core.Cache.csproj">
+      <Project>{715a0012-45cd-40ca-b7d8-9bdac6db70a8}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Core.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Sage.CA.SBS.ERP.Sage300.Core.Configuration\Sage.CA.SBS.ERP.Sage300.Core.Configuration.csproj">
+      <Project>{6754d33a-a4fe-4661-a16f-7b48187fb459}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Core.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Sage.CA.SBS.ERP.Sage300.Core.Logging\Sage.CA.SBS.ERP.Sage300.Core.Logging.csproj">
+      <Project>{e7d37009-3af2-4c01-8b9c-04e6d9d581da}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Core.Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

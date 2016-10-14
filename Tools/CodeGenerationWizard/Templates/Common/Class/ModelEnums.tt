@@ -1,0 +1,65 @@
+﻿<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#
+    // Locals
+    var moduleId = settings.ModuleId;
+    var copyright = settings.Copyright;
+    var companyNamespace = settings.CompanyNamespace;
+    var resourceExtension = settings.ResourceExtension;
+    var extension = settings.Extension;
+    var enumHelper = settings.EnumHelper;
+    var resxName = settings.ResxName;
+#>
+// <#=copyright#>
+
+#region Namespace
+
+using Sage.CA.SBS.ERP.Sage300.Common.Models;
+using <#=companyNamespace#>.<#=moduleId#>.Resources<#=resourceExtension#>;
+
+#endregion
+
+namespace <#=companyNamespace#>.<#=moduleId#>.Models.Enums<#=extension#>
+{
+    /// <summary>
+    /// Enum for <#=enumHelper.Name#>
+    /// </summary>
+    public enum <#=enumHelper.Name#>
+    {
+<#
+            // Iterate values collection
+            var count = 0;
+            foreach (var value in enumHelper.Values)
+            {
+                // Locals - Used to split out prefix and replace invalid characters
+                var tmp = value.Key.Split(':');
+                var valueName = tmp[1];
+                count++;
+#>
+        /// <summary>
+        /// Gets or sets <#=valueName#>
+        /// </summary>
+        [EnumValue("<#=valueName#>", typeof(<#=resxName#>))]
+<#
+                if (value.Value is int)
+                {
+#>
+        <#=valueName#> = <#=value.Value#><#=(count != enumHelper.Values.Count) ? "," : string.Empty#>
+<#
+                }
+
+                if (value.Value is char)
+                {
+#>
+        <#=valueName#> = '<#=value.Value#>'<#=(count != enumHelper.Values.Count) ? "," : string.Empty#>
+<#
+                }
+#>
+
+<#
+            }
+#>
+    }
+}

@@ -1,0 +1,27 @@
+﻿<Window x:Class="SageLocalizationHelper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="650">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="39*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="169*"/>
+            <RowDefinition Height="46*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="137*"/>
+            <ColumnDefinition Width="380*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Projects Folder" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top" Width="118" Height="26" Grid.Row="1"/>
+        <TextBox x:Name="txtProjectsPath" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="358" Grid.Row="1" Text="C:\Sage\SC\Columbus-NA\ERP\SourceCode\Projects\"/>
+        <Button x:Name="btnBrowse" Content="Browse" Grid.Column="1" HorizontalAlignment="Left" Margin="373,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.59,0.838" Click="btnBrowse_Click"/>
+        <RichTextBox x:Name="richTextLog" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="158" Margin="10,1,0,0" Grid.Row="3"  VerticalAlignment="Top" Width="608" Grid.ColumnSpan="2">
+        </RichTextBox>
+        <Button x:Name="btnClose" Content="Close" Grid.Column="1" HorizontalAlignment="Left" Margin="373,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="75" Click="btnClose_Click"/>
+        <Button x:Name="btnProcess" Content="Process" Grid.Column="1" HorizontalAlignment="Left" Margin="278,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.175,0.192" Click="btnProcess_Click"/>
+        <Label Content="Log" HorizontalAlignment="Left" Margin="13,5,0,0" VerticalAlignment="Top" Width="118" Height="26" Grid.Row="2"/>
+
+    </Grid>
+</Window>

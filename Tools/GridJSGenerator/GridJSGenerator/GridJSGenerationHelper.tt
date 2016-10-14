@@ -1,0 +1,92 @@
+﻿
+var %%NameSpace%%Header = {
+	%%Customization%%
+};
+
+var %%GridId%%Utility = {
+    setGridData: function (successData) {
+    },
+    setLineEditable: function (e){
+    },
+    columns:[%%Columns%%],
+    schema: {
+        model: {
+            fields: {
+                Delete: { editable: false }
+            }
+        }
+    },
+    dataChange: function (changedData){
+    },
+};
+
+var %%NameSpace%% = {
+
+%%GridId%%Config: {
+    pageSize: sg.utls.gridPageSize,
+    pageable: {
+        input: true,
+        numeric: false
+    },
+    scrollable: true,
+    navigatable: true, //enable grid cell tabbing
+    resizable: true,
+    selectable: true,
+    reorderable: sg.utls.reorderable,
+    //Turns server side paging on
+    isServerPaging: true,
+    //Param will be null during Get and will contain the data that needs to be passed to the server on create
+    param: null,
+    getParam: function () {
+        var grid = $('#%%GridId%%').data("kendoGrid");
+         
+        var pageNumber = grid.dataSource.page();
+        var pageSize = grid.dataSource.pageSize();
+        var parameters = {
+            pageNumber: pageNumber - 1,
+            pageSize: pageSize,
+            model: ko.mapping.toJS(%%JSViewModel%%)
+        }
+        return parameters;
+    },
+    //URL to get the data from the server. 
+    pageUrl: sg.utls.url.buildUrl('%%Module%%', '%%Controller%%', '%%Action%%'),
+    //Call back function when Get is successfull. In this, the data for the grid and the total results count are to be set along with updating knockout
+    buildGridData: %%GridId%%Utility.setGridData,
+    //Call back function after data is bound to the grid. Is used to set the added line as editable
+    afterDataBind: %%GridId%%Utility.setLineEditable,
+    columns: %%GridId%%Utility.columns,
+    editable: {
+        mode: "incell",
+        confirmation: false,
+        createAt: "bottom"
+    },
+	%%SetUserPreference%%
+    schema: %%GridId%%Utility.schema,
+    // Called when the data changes in a cell. 
+    dataChange: %%GridId%%Utility.dataChange,
+    edit: function (e) {
+        $('#%%GridId%%').data("kendoGrid").select(e.container.closest("tr"));
+
+
+    },
+    change: %%GridId%%Utility.insertLine
+}
+};
+
+var %%GridId%%Utility = {
+    setGridData: function (successData) {
+    },
+    setLineEditable: function (e){
+    },
+    columns:[%%Columns%%],
+    schema: {
+        model: {
+            fields: {
+                Delete: { editable: false }
+            }
+        }
+    },
+    dataChange: function (changedData){
+    },
+};

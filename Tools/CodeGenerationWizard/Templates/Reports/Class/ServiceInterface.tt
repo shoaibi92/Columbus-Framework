@@ -1,0 +1,33 @@
+﻿<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#
+    // Locals
+    var moduleId = settings.ModuleId;
+    var copyright = settings.Copyright;
+    var companyNamespace = settings.CompanyNamespace;
+    var modelName = view.Properties[BusinessView.ModelName];
+    var entityName = view.Properties[BusinessView.EntityName];
+#>
+// <#=copyright#>
+
+#region Namespace
+
+using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Service;
+using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Service.Reports;
+using <#=companyNamespace#>.<#=moduleId#>.Models.Reports;
+
+#endregion
+
+namespace <#=companyNamespace#>.<#=moduleId#>.Interfaces.Services.Reports
+{
+    /// <summary>
+    /// Interface for service
+    /// </summary>
+    /// <typeparam name="T"><#=modelName#></typeparam>
+    public interface I<#=entityName#>Service<T> : IReportService<T>, ISecurityService where T : <#=modelName#>, new()
+    {
+    }
+}
+

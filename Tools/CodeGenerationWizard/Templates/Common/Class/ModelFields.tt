@@ -1,0 +1,166 @@
+﻿<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#
+    // Locals
+    var moduleId = settings.ModuleId;
+    var copyright = settings.Copyright;
+    var companyNamespace = settings.CompanyNamespace;
+    var extension = settings.Extension;
+    var repositoryType = settings.RepositoryType;
+    var generateDynamicEnablement = settings.GenerateDynamicEnablement;
+    var viewId = view.Properties[BusinessView.ViewId];
+    var modelName = view.Properties[BusinessView.ModelName];
+#>
+// <#=copyright#>
+
+#region Namespace
+
+<#
+    if (generateDynamicEnablement)
+    {
+#>
+using System.Collections.Generic;
+using Sage.CA.SBS.ERP.Sage300.Common.Models.Attributes;
+<#
+    }
+#>
+#endregion
+
+namespace <#=companyNamespace#>.<#=moduleId#>.Models<#=extension#>
+{
+    /// <summary>
+    /// Contains list of <#=modelName#> Constants
+    /// </summary>
+    public partial class <#=modelName#>
+    {
+<#
+    if (!repositoryType.Equals(RepositoryType.DynamicQuery))
+    {
+#>
+        /// <summary>
+        /// Entity Name
+        /// </summary>
+        public const string EntityName = "<#=viewId#>";
+
+<#
+    }
+#>
+<#
+    if (generateDynamicEnablement)
+    {
+#>
+        /// <summary>
+        /// Dynamic Attributes contain a reverse mapping of field and property
+        /// </summary>
+        [IgnoreExportImport]
+        public static Dictionary<string, string> DynamicAttributes
+        {
+            get
+            {
+                return new Dictionary<string, string>
+                {
+<#
+                // Iterate fields to determine which field(s) have isDynamicEnablement
+                for (var i = 0; i < view.Fields.Count; i++)
+                {
+                    // locals
+                    var field = view.Fields[i];
+                    var fieldName = field.Name;
+
+                    // Is DynamicEnablement attribute set?
+                    if (field.IsDynamicEnablement)
+                    {
+#>
+                    {"<#=field.ServerFieldName#>", "<#=fieldName#>"},
+<#
+                    }
+                }
+#>
+                };
+            }
+        }
+<#
+    }
+#>
+
+<#
+    if (!repositoryType.Equals(RepositoryType.DynamicQuery))
+    {
+#>
+        #region Properties
+
+        /// <summary>
+        /// Contains list of <#=modelName#> Field Constants
+        /// </summary>
+        public class Fields
+        {
+<#
+                // Iterate fields collection
+                for (var i = 0; i < view.Fields.Count; i++)
+                {
+                    // locals
+                    var field = view.Fields[i];
+                    var fieldName = field.Name;
+
+                    // Naming convention is potentially invalid
+                    if (fieldName.All(Char.IsUpper))
+                    {
+#>
+            // TODO The naming convention of this property has to be manually evaluated
+<#
+                    }
+#>
+            /// <summary>
+            /// Property for <#=fieldName#>
+            /// </summary>
+            public const string <#=fieldName#> = "<#=field.ServerFieldName#>";
+
+<#
+                }
+#>
+        }
+
+        #endregion
+<#
+    }
+#>
+        #region Properties
+
+        /// <summary>
+        /// Contains list of <#=modelName#> Index Constants
+        /// </summary>
+        public class Index
+        {
+<#
+                // Iterate fields collection
+                for (var i = 0; i < view.Fields.Count; i++)
+                {
+                    // locals
+                    var field = view.Fields[i];
+                    var fieldName = field.Name;
+
+                    // Naming convention is potentially invalid
+                    if (fieldName.All(Char.IsUpper))
+                    {
+#>
+            // TODO The naming convention of this property has to be manually evaluated
+<#
+                    }
+#>
+            /// <summary>
+            /// Property Indexer for <#=fieldName#>
+            /// </summary>
+            public const int <#=fieldName#> = <#=field.Id#>;
+
+<#
+                }
+#>
+
+        }
+
+        #endregion
+
+    }
+}

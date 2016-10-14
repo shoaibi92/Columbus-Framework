@@ -1,0 +1,31 @@
+﻿<#@ template language="C#" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#
+    // Locals
+    var moduleId = settings.ModuleId;
+    var copyright = settings.Copyright;
+    var companyNamespace = settings.CompanyNamespace;
+    var modelName = view.Properties[BusinessView.ModelName];
+    var entityName = view.Properties[BusinessView.EntityName];
+#>
+// <#=copyright#>
+
+#region Namespace
+
+using <#=companyNamespace#>.<#=moduleId#>.Models;
+using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Repository;
+
+#endregion
+
+namespace <#=companyNamespace#>.<#=moduleId#>.Interfaces.BusinessRepository
+{
+    /// <summary>
+    /// Interface I<#=entityName#>Entity
+    /// </summary>
+    /// <typeparam name="T">Where T is type of <see cref="<#=modelName#>"/></typeparam>
+    public interface I<#=entityName#>Entity<T> : IBusinessRepository<T>, ISecurity 
+        where T : <#=modelName#>, new()
+    {
+    }
+}

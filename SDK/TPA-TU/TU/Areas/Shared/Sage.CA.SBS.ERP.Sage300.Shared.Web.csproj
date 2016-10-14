@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{04B1D41A-46AC-409C-99AB-D082C1A9CE55}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sage.CA.SBS.ERP.Sage300.Shared.Web</RootNamespace>
+    <AssemblyName>Sage.CA.SBS.ERP.Sage300.Shared.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\Solutions\Dev\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>4cf8ead0</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\Assemblies\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.Shared.Web.XML</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\Microsoft.Data.Edm.5.6.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\Microsoft.Data.OData.5.6.4\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\Microsoft.Data.Services.Client.5.6.4\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage.6.0.1304.1\lib\NET45\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.WindowsAzure.TransientFaultHandling, Version=5.1.1209.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\EnterpriseLibrary.WindowsAzure.TransientFaultHandling.5.1.1212.0\lib\NET4\Microsoft.Practices.EnterpriseLibrary.WindowsAzure.TransientFaultHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.TransientFaultHandling.Core">
+      <HintPath>..\..\..\..\packages\TransientFaultHandling.Core.5.1.1209.1\lib\NET4\Microsoft.Practices.TransientFaultHandling.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.WindowsAzure.ConfigurationManager.2.0.0.0\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=3.1.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\WindowsAzure.Storage.3.1.0.1\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\System.Spatial.5.6.4\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.2\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <HintPath>..\..\..\..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Solutions\packages\Microsoft.AspNet.WebPages.Data.3.1.2\lib\net45\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Solutions\packages\Microsoft.AspNet.WebPages.WebData.3.1.2\lib\net45\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\BaseInvoiceEntryControllerInternal.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\ExportImportController.cs" />
+    <Compile Include="Controllers\POOEBaseInvEntryControllerInternal.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\ReportControllerInternal.cs" />
+    <Compile Include="Controllers\BaseRevaluationControllerInternal.cs" />
+    <Compile Include="Models\BaseInvoiceEntryViewModel.cs" />
+    <Compile Include="Models\POOEBaseInvoiceViewModel.cs" />
+    <Compile Include="Models\ReportViewModel.cs" />
+    <Compile Include="Models\Report\GLTransaction\GLTransactionViewModel.cs" />
+    <Compile Include="Models\RevaluationHistoryViewModel.cs" />
+    <Compile Include="Models\RevaluationViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SharedAreaRegistration.cs" />
+    <Compile Include="BundleRegistration.cs" />
+    <Compile Include="SharedWebBootstrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\Web.config">
+      <Link>Web.config</Link>
+    </Content>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Properties\PublishProfiles\Local Publish.pubxml" />
+    <Content Include="Scripts\DocumentHistory\Sage.CA.SBS.ERP.Sage300.Common.DocumentHistory.js" />
+    <Content Include="Scripts\ItemQuantity\Sage.CA.SBS.ERP.Sage300.Common.QuantityGrid.js" />
+    <Content Include="Scripts\Report\GLTransaction\Sage.CA.SBS.ERP.Sage300.Common.GLTransactionBehaviour.js" />
+    <Content Include="Scripts\Report\GLTransaction\Sage.CA.SBS.ERP.Sage300.Common.GLTransactionKoExtn.js" />
+    <Content Include="Scripts\Report\GLTransaction\Sage.CA.SBS.ERP.Sage300.Common.GLTransactionRepository.js" />
+    <Content Include="Scripts\Revaluation\Sage.CA.SBS.ERP.Sage300.RevaluationBehavior.js" />
+    <Content Include="Scripts\Revaluation\Sage.CA.SBS.ERP.Sage300.RevaluationHistoryBehavior.js" />
+    <Content Include="Scripts\Revaluation\Sage.CA.SBS.ERP.Sage300.RevaluationKoExtn.js" />
+    <Content Include="Scripts\Sage.CA.SBS.ERP.Sage300.Common.Cache.js" />
+    <Content Include="Scripts\Sage.CA.SBS.ERP.Sage300.Common.ControlsR3.js" />
+    <Content Include="Scripts\Sage.CA.SBS.ERP.Sage300.Common.InquiryGrid.js" />
+    <Content Include="Scripts\Sage.CA.SBS.ERP.Sage300.Common.LabelMenuHelper.js" />
+    <Content Include="Scripts\Sage.CA.SBS.ERP.Sage300.Common.SalesSplitGrid.js" />
+    <Content Include="Scripts\Sage.CA.SBS.ERP.Sage300.Common.SessionTimeOut.js" />
+    <Content Include="Scripts\Sage.CA.SBS.ERP.Sage300.Common.TaxesGrid.js" />
+    <Content Include="Scripts\Sage.CA.SBS.ERP.Sage300.Common.FiscalCalendar.js" />
+    <Content Include="Scripts\Sage.CA.SBS.ERP.Sage300.Common.GridPreferences.js" />
+    <Content Include="Scripts\Sage.CA.SBS.ERP.Sage300.Common.KendoHelpers.js" />
+    <Content Include="Scripts\Sage.CA.SBS.ERP.Sage300.Common.Controls.js" />
+    <Content Include="Scripts\Sage.CA.SBS.ERP.Sage300.Common.Customization.js" />
+    <Content Include="Scripts\Sage.CA.SBS.ERP.Sage300.Common.Global.js" />
+    <Content Include="Scripts\Sage.CA.SBS.ERP.Sage300.Common.Report.js" />
+    <Content Include="Scripts\Sage.CA.SBS.ERP.Sage300.Common.UIWidget.RecordNavigation.js" />
+    <Content Include="Scripts\Sage.CA.SBS.ERP.Sage300.Common.URL.js" />
+    <Content Include="Scripts\Sage.CA.SBS.ERP.Sage300.Common.Validate.js" />
+    <Content Include="Views\ExportImport\AddCriteria.cshtml" />
+    <Content Include="Views\ExportImport\Filter.cshtml" />
+    <Content Include="Views\Report\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Localization.cshtml" />
+    <Content Include="Views\Shared\_ProcessingFooter.cshtml" />
+    <Content Include="Views\Shared\_ReportFooter.cshtml" />
+    <Content Include="Views\Shared\_SetupFooter.cshtml" />
+    <Content Include="Views\Partials\_DeleteButton.cshtml" />
+    <Content Include="Views\Partials\_OptionalButton.cshtml" />
+    <Content Include="Views\Partials\_PrintButton.cshtml" />
+    <Content Include="Views\Partials\_ProceedButton.cshtml" />
+    <Content Include="Views\Partials\_SaveButton.cshtml" />
+    <Content Include="Views\Shared\_GridActions.cshtml" />
+    <Content Include="Views\Partials\_AddLineButton.cshtml" />
+    <Content Include="Views\Partials\_DeleteLineButton.cshtml" />
+    <Content Include="Views\Partials\_ButtonBase.cshtml" />
+    <Content Include="Views\Partials\_GenericButton.cshtml" />
+    <Content Include="Scripts\Sage.CA.SBS.ERP.Sage300.Common.Constants.js" />
+    <Content Include="Views\Shared\_LocalizedLayout.cshtml" />
+    <Content Include="Views\Report\GLTransaction\_GLSubledgerTransactionReport.cshtml" />
+    <Content Include="Views\Shared\_LocalizedLayoutR2.cshtml" />
+    <Content Include="Views\DocumentHistory\DocumentHistory.cshtml" />
+    <Content Include="Views\DocumentHistory\_Localization.cshtml" />
+    <Content Include="Views\TaxesGrid\_Localization.cshtml" />
+    <Content Include="Views\TaxesGrid\TaxesGrid.cshtml" />
+    <Content Include="Views\SalesSplitGrid\_Localization.cshtml" />
+    <Content Include="Views\SalesSplitGrid\_SalesSplitGrid.cshtml" />
+    <Content Include="Views\QuantityGrid\_QuantityGrid.cshtml" />
+    <Content Include="Views\QuantityGrid\_Localization.cshtml" />
+    <Content Include="Scripts\Sage.CA.SBS.ERP.Sage300.Common.iFrameHelper.js" />
+    <Content Include="Views\Revaluation\Partials\_Details.cshtml" />
+    <Content Include="Views\Revaluation\Partials\_DetailsOptionalFields.cshtml" />
+    <Content Include="Views\Revaluation\Partials\_Localization.cshtml" />
+    <Content Include="Views\Revaluation\_Index.cshtml" />
+    <Content Include="Views\RevaluationHistory\Partials\_Localization.cshtml" />
+    <Content Include="Views\RevaluationHistory\_Index.cshtml" />
+    <Content Include="Views\Shared\_LocalizedLayoutR3.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Columbus-Framework\Common\Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository\Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.csproj">
+      <Project>{266375de-affe-47e2-8ad2-d34b018e91db}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Columbus-Framework\Common\Sage.CA.SBS.ERP.Sage300.Common.Exceptions\Sage.CA.SBS.ERP.Sage300.Common.Exceptions.csproj">
+      <Project>{7bf38564-09a6-4943-8249-d0b2a3e04516}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Columbus-Framework\Common\Sage.CA.SBS.ERP.Sage300.Common.Interfaces\Sage.CA.SBS.ERP.Sage300.Common.Interfaces.csproj">
+      <Project>{2df9d920-e05a-44fe-91c7-4fce7b3a2b28}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Columbus-Framework\Common\Sage.CA.SBS.ERP.Sage300.Common.Models\Sage.CA.SBS.ERP.Sage300.Common.Models.csproj">
+      <Project>{74ba53c3-eb09-4226-9985-bad7306db937}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Columbus-Framework\Common\Sage.CA.SBS.ERP.Sage300.Common.Resources\Sage.CA.SBS.ERP.Sage300.Common.Resources.csproj">
+      <Project>{4bb55006-cf24-43b5-800c-3f9a4685be9e}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Columbus-Framework\Common\Sage.CA.SBS.ERP.Sage300.Common.Services\Sage.CA.SBS.ERP.Sage300.Common.Services.csproj">
+      <Project>{c5955f5c-27c8-49e2-9035-b30eea68786d}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Columbus-Framework\Common\Sage.CA.SBS.ERP.Sage300.Common.Utilities\Sage.CA.SBS.ERP.Sage300.Common.Utilities.csproj">
+      <Project>{9ce25370-dc66-4d61-87b4-aed9a3dc7bd4}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Columbus-Framework\Common\Sage.CA.SBS.ERP.Sage300.Common.Web\Sage.CA.SBS.ERP.Sage300.Common.Web.csproj">
+      <Project>{7e1a2f26-8e5c-4e72-890c-6d72e535db7e}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Columbus-Framework\Workflow\Sage.CA.SBS.ERP.Sage300.Workflow.Models\Sage.CA.SBS.ERP.Sage300.Workflow.Models.csproj">
+      <Project>{b667c745-7c42-4c7c-87aa-bf8c405c6242}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Workflow.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug-Dev|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseDev|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug-Dev|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseDev|x86'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57772</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57772/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://localhost/Sage.Columbus.Web</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\..\..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

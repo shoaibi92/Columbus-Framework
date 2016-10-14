@@ -1,0 +1,8 @@
+<bootstrapper>
+  <assemblies>
+    <add assembly="TPA*.dll" />
+  </assemblies>
+  <menuresx>
+    <add assembly="TPA.TU.Resources" name="MenuResx" />
+  </menuresx>
+</bootstrapper>

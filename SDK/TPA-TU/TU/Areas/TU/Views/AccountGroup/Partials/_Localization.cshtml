@@ -1,0 +1,18 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using AccountGroupsResx = TPA.TU.Resources.Forms.AccountGroupsResx
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+
+<script type="text/javascript">
+    var accountGroupResources = {
+        FinderTitle: '@Html.SageRaw(CommonResx.Select)',
+        ProcessFailedMessage: '@Html.SageRaw(CommonResx.ProcessFailedMessage)',
+        DeleteConfirmMessage: '@Html.SageRaw(CommonResx.DeleteConfirmMessage)',
+        AccountGroupCodeTitle: '@Html.SageRaw(AccountGroupsResx.AccountGroupCode)',
+        DeleteTitle: '@Html.SageRaw(CommonResx.Delete)',
+        AccountGroupTitle: '@Html.SageRaw(AccountGroupsResx.Entity)',
+        AccountGroupFinderTitle: '@Html.SageRaw(AccountGroupsResx.AccountGroup)',
+        AccountTitle: '@Html.SageRaw(AccountGroupsResx.Account)',
+    };
+</script>

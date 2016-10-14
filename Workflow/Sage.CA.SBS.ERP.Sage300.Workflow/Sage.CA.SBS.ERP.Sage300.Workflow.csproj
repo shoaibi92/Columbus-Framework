@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{79A1EF90-D4B5-47CB-BB7B-214F9C321F08}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sage.CA.SBS.ERP.Sage300.Workflow</RootNamespace>
+    <AssemblyName>Sage.CA.SBS.ERP.Sage300.Workflow</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\Solutions\Dev\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>$(SolutionDir)..\Assemblies</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)..\Assemblies</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\..\..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
+      <HintPath>..\..\..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Core.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.Core.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseUnitOfWork.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitOfWorkExecuteException.cs" />
+    <Compile Include="UnitOfWorkManager.cs" />
+    <Compile Include="UnitOfWorkManagerFactory.cs" />
+    <Compile Include="WorkFlowManager.cs" />
+    <Compile Include="WorkflowManagerFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository\Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.csproj">
+      <Project>{266375de-affe-47e2-8ad2-d34b018e91db}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Sage.CA.SBS.ERP.Sage300.Common.Models\Sage.CA.SBS.ERP.Sage300.Common.Models.csproj">
+      <Project>{74BA53C3-EB09-4226-9985-BAD7306DB937}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Sage.CA.SBS.ERP.Sage300.Common.Utilities\Sage.CA.SBS.ERP.Sage300.Common.Utilities.csproj">
+      <Project>{9ce25370-dc66-4d61-87b4-aed9a3dc7bd4}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Sage.CA.SBS.ERP.Sage300.Core.Interfaces\Sage.CA.SBS.ERP.Sage300.Core.Interfaces.csproj">
+      <Project>{798573ff-cf70-471e-91bf-ae86b3f097f5}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Core.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.CA.SBS.ERP.Sage300.Workflow.DataAccess\Sage.CA.SBS.ERP.Sage300.Workflow.DataAccess.csproj">
+      <Project>{4c19e3fb-45f0-4283-b7b9-940a2dc39640}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Workflow.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.CA.SBS.ERP.Sage300.Workflow.Interfaces\Sage.CA.SBS.ERP.Sage300.Workflow.Interfaces.csproj">
+      <Project>{4391ebc0-8df9-4fe9-afb3-18e38557b754}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Workflow.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.CA.SBS.ERP.Sage300.Workflow.Models\Sage.CA.SBS.ERP.Sage300.Workflow.Models.csproj">
+      <Project>{b667c745-7c42-4c7c-87aa-bf8c405c6242}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Workflow.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,56 @@
+﻿<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#
+   // Locals
+    var moduleId = settings.ModuleId;
+    var copyright = settings.Copyright;
+    var companyNamespace = settings.CompanyNamespace;
+    var modelName = view.Properties[BusinessView.ModelName];
+    var entityName = view.Properties[BusinessView.EntityName];
+
+    var webModuleNamespace = settings.DoesAreasExist ? "Web.Areas." + moduleId : moduleId + ".Web";
+#>
+// <#=copyright#>
+
+#region Namespace
+
+using Microsoft.Practices.Unity;
+using <#=companyNamespace#>.<#=moduleId#>.Interfaces.Services.Process;
+using <#=companyNamespace#>.<#=moduleId#>.Models.Process;
+using <#=companyNamespace#>.<#=moduleId#>.Models.Enums.Process;
+using <#=companyNamespace#>.<#=webModuleNamespace#>.Models.Process;
+using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
+using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.Process;
+
+#endregion
+
+namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers.Process
+{
+    /// <summary>
+    /// Class <#=entityName#> Controller
+    /// </summary>
+    /// <typeparam name="T">Where T is type of <see cref="<#=modelName#>"/></typeparam>
+    public class <#=entityName#>Controller<T> :
+        ProcessController<T, <#=entityName#>ViewModel<T> , <#=entityName#>ControllerInternal<T>, I<#=entityName#>Service<T>>
+        where T : <#=modelName#>, new()
+    {
+        #region Constructor
+
+        /// <summary>
+        /// Constructor for <#=entityName#>
+        /// </summary>
+        /// <param name="container">Unity container</param>
+        public <#=entityName#>Controller(IUnityContainer container)
+            : base(
+                container,
+                (context =>new <#=entityName#>ControllerInternal<T>(context)),
+                "<#=moduleId#><#=entityName#>")
+        {
+        }
+
+        #endregion
+
+    }
+}

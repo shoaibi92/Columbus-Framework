@@ -1,0 +1,31 @@
+﻿<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#
+    // Locals
+    var entityName = view.Properties[BusinessView.EntityName];
+    var localEntityName = entityName.Substring(0, 1).ToLower() + entityName.Substring(1);
+    var moduleId = settings.ModuleId;
+    var copyright = settings.Copyright;
+    var resxName = settings.ResxName;
+    var companyNamespace = settings.CompanyNamespace;
+    var resourceExtension = settings.ResourceExtension;
+    var keyFieldName = view.Keys.FirstOrDefault();
+    var titleResource = string.IsNullOrEmpty(keyFieldName) ? string.Empty : string.Format(",{0}Title: '@{1}.{0}'", keyFieldName, resxName);
+
+#>
+@* <#=copyright#> *@
+
+@using <#=resxName#> = <#=companyNamespace#>.<#=moduleId#>.Resources<#=resourceExtension#>.<#=resxName#>
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+
+<script type="text/javascript">
+    var <#=localEntityName#>Resources = {
+        FinderTitle: '@CommonResx.Select'
+        ,ProcessFailedMessage: '@CommonResx.ProcessFailedMessage'
+        ,DeleteConfirmMessage: '@CommonResx.DeleteConfirmMessage'
+        ,DeleteTitle: '@CommonResx.Delete'
+        <#=titleResource#>
+    };
+</script>

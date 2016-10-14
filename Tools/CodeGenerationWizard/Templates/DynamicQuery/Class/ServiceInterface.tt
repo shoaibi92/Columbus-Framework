@@ -1,0 +1,42 @@
+﻿<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#
+    // Locals
+    var moduleId = settings.ModuleId;
+    var copyright = settings.Copyright;
+    var companyNamespace = settings.CompanyNamespace;
+    var modelName = view.Properties[BusinessView.ModelName];
+    var entityName = view.Properties[BusinessView.EntityName];
+#>
+// <#=copyright#>
+
+#region Namespace
+
+using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Service;
+using Sage.CA.SBS.ERP.Sage300.Common.Models;
+using <#=companyNamespace#>.<#=moduleId#>.Models;
+
+#endregion
+
+namespace <#=companyNamespace#>.<#=moduleId#>.Interfaces.Services
+{
+    /// <summary>
+    /// Interface for service
+    /// </summary>
+    /// <typeparam name="T"><#=modelName#></typeparam>
+    public interface I<#=entityName#>Service<T> : IDynamicQueryEntityService<T>, ISecurityService where T : <#=modelName#>, new()
+    {
+        /// <summary>
+        /// Gets <#=modelName#>
+        /// </summary>
+		/// <param name="args">Optional Parameters</param>
+        /// <returns>DynamicQueryEnumerableResponse</returns>
+        // TODO: Generic Get routine has been added and will require filter
+        // TODO: parameters to be added based upon Dynamic Query requirements
+        // TODO: Delete TODO statements when complete
+        DynamicQueryEnumerableResponse<T> Get(params object[] args);
+    }
+}
+

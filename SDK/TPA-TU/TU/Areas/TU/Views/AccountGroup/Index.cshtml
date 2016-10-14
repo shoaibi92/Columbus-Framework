@@ -1,0 +1,17 @@
+﻿
+@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using (@Html.BeginForm(null, null, FormMethod.Post, new { id = "frmAccountGroup" }))
+{
+    @Html.Partial("~/Areas/TU/Views/AccountGroup/Partials/_AccountGroup.cshtml")
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/TU/AccountGroup")
+}
+@{
+    Layout = Shared.LocalizedLayoutR3;
+}
+
+

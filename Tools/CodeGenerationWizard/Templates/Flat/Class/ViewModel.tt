@@ -1,0 +1,62 @@
+﻿<#@ template language="C#" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#
+    // Locals
+    var moduleId = settings.ModuleId;
+    var copyright = settings.Copyright;
+    var companyNamespace = settings.CompanyNamespace;
+    var modelName = view.Properties[BusinessView.ModelName];
+    var entityName = view.Properties[BusinessView.EntityName];
+
+    var webModuleNamespace = settings.DoesAreasExist ? "Web.Areas." + moduleId : moduleId + ".Web";
+#>
+// <#=copyright#>
+
+#region Namespace
+
+using System;
+using System.Collections;
+using Sage.CA.SBS.ERP.Sage300.Common.Web;
+using Sage.CA.SBS.ERP.Sage300.Common.Models;
+using <#=companyNamespace#>.<#=moduleId#>.Models;
+<#
+	if (view.Enums.Count > 0)
+	{
+#>
+using <#=companyNamespace#>.<#=moduleId#>.Models.Enums;
+<#
+	}	
+#>
+#endregion
+
+namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Models
+{
+    /// <summary>
+    /// Class for <#=entityName#>ViewModel
+    /// </summary>
+    /// <typeparam name="T">Where T is type of <see cref="<#=modelName#>"/></typeparam>
+    public class <#=entityName#>ViewModel<T> : ViewModelBase<T> 
+        where T : <#=modelName#>, new()
+    {
+<#
+            foreach (var value in view.Enums.Values)
+            {
+                var enumName = value.Name;
+#>
+        /// <summary>
+        /// <#=enumName#> list
+        /// </summary>
+<#
+                var plural = BusinessViewHelper.PluralName(enumName);
+#>
+        public IEnumerable <#=plural#>
+        {
+            get { return EnumUtility.GetItems<<#=enumName#>>(); }
+        }
+
+<#
+            }
+#>
+    }
+}

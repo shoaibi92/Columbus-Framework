@@ -1,0 +1,200 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@model TPA.Web.Areas.TU.Models.AccountGroupViewModel<TPA.TU.Models.AccountGroup>
+@using AccountGroupsResx = TPA.TU.Resources.Forms.AccountGroupsResx
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums
+@using AnnotationsResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.AnnotationsResx
+<script type="text/javascript">
+    @Html.ConvertToJsVariableUsingNewtonSoft("AccountGroupViewModel", Model)
+</script>
+
+@Html.Partial("~/Areas/TU/Views/AccountGroup/Partials/_Localization.cshtml")
+<div id="success" class="message"></div>
+<div class="form-screen">
+    <div id="message"></div>
+    <header>
+        <section class="header-group-1">
+            <div class="header-wrapper">
+                <div class="header-headline">
+                    @Html.SageHeader1Label("accountGroupHeader", AccountGroupsResx.Entity)
+                </div>
+                @Html.Partial(Core.OptionsMenu, Model.UserAccess)
+                <div class="header-options">
+                    @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
+                    {
+                        @Html.KoSageButton("btnNew", null, new { @value = CommonResx.CreateNew, @id = "btnNew", @class = "btn btn-primary" })
+                    }
+                </div>
+            </div>
+            <div class="flag-required">
+                <span class="req-option">@CommonResx.RequiredLegend</span>
+            </div>
+        </section>
+    </header>
+      <div class="form-group">
+          <div class="search-group">
+              @Html.SageLabel("accountGroupCode", AccountGroupsResx.AccountGroupCode, new { @class = "required" })
+              @Html.KoSageTextBoxFor(model => model.Data.AccountGroupCode, new { @sagevalue = "Data.AccountGroupCode", @valueUpdate = "'input'" }, new { @class = "default txt-upper", @formatTextbox = "alphaNumeric" })
+              @Html.KoSageButton("btnLoadAccountGroupCode", null, new { @id = "btnLoad", @class = "icon btn-go", @tabindex = "-1" })
+              @Html.KoSageButton("btnFinderAccountGroupCode", null, new { @class = "icon btn-search", @id = "btnFinderAccountGroupCode", @tabindex = "-1" })
+              @Html.ValidationMessageFor(model => model.Data.AccountGroupCode)
+          </div>
+      </div>
+      <div class="form-group">
+         <div class="input-group">
+             @Html.SageLabelFor(model => model.Data.Description)
+             @Html.KoSageTextBoxFor(model => model.Data.Description, new { @value = "Data.Description", @valueUpdate = "'input'" }, new { @class = "large" })
+         </div>
+      </div>
+      <div class="form-group">
+          <div class="input-group">
+              @Html.SageLabelFor(model => model.Data.DateLastMaintained)
+              @Html.KoSageTextBoxFor(model => model.Data.DateLastMaintained, new { @value = "Data.ComputedLastMaintainedDate" }, new { @disabled = "true", @class = "default" })
+          </div>
+          <div class="input-group with-checkbox">
+              <div class="child">
+                  @Html.KoSageCheckBox(CommonResx.InactiveAsOfDate, false, new { @sagechecked = "Data.Inactive" }, new { @name = "Status", @id = "chkStatus", @class = "icon btn-go" })
+                  @Html.SageLabel(CommonResx.InactiveAsOfDate, null, new {@for="chkStatus", @class = "" })
+              </div>
+              @Html.KoSageTextBox(CommonResx.InactiveAsOfDate, new { @value = "Data.ComputedInactiveDate" }, new { @disabled = "true", @class = "default " })
+          </div>
+      </div>
+      <div class="staticgrid-group">
+          
+          <table class="table table-bordered table-striped">
+
+              <thead>
+                  <tr>
+                      <th data-title="Document Type" data-field="doc-type" role="columnheader" data-role="sortable" class="w220"></th>
+                      <th data-title="Document Type" data-field="doc-type" role="columnheader" data-role="sortable" class="w220 required">@AccountGroupsResx.GenLedgerAcct</th>
+                      <th data-role="sortable" role="columnheader" data-field="doc-nxtNumb" data-title="Next Number">@AccountGroupsResx.GenLedgerAcctDesc</th>
+                  </tr>
+              </thead>
+
+
+              <tbody>
+                  <tr>
+                      <td class="">@Html.SageLabelFor(model => model.Data.PayablesControlAccount, new { @class = "" })</td>
+                      <td>
+                          <div class="wrapper">
+                              @Html.KoSageTextBoxFor(model => model.Data.PayablesControlAccount, new { @value = "Data.PayablesControlAccount", @valueUpdate = "'input'" }, new { @class = "txt-upper" })
+                              @Html.KoSageButton("btnFinderPayControlAccount", null, new { @class = "icon btn-search ", @id = "btnFinderPayControlAccount", @tabindex = "-1" })
+                          </div>
+                      </td>
+                      <td>@Html.KoSpan(new { text = "accountGroupUI.accountGroupModel.PayablesControlDesc()" })</td>
+                  </tr>
+                  <tr>
+                      <td class="">@Html.SageLabelFor(model => model.Data.DiscountsAccount, new { @class = "" })</td>
+                      <td>
+                          <div class="wrapper">
+                              @Html.KoSageTextBoxFor(model => model.Data.DiscountsAccount, new { @value = "Data.DiscountsAccount", @valueUpdate = "'input'" }, new { @class = "txt-upper" })
+                              @Html.KoSageButton("btnFinderDiscountsAccount", null, new { @class = "icon btn-search ", @id = "btnFinderDiscountsAccount", @tabindex = "-1" })
+                          </div>
+                      </td>
+                      <td>@Html.KoSpan(new { text = "accountGroupUI.accountGroupModel.DiscountsDesc()" })</td>
+                  </tr>
+                  <tr>
+                      <td class="">@Html.SageLabelFor(model => model.Data.PrepaymentAccount, new { @class = "" })</td>
+                      <td>
+                          <div class="wrapper">
+                              @Html.KoSageTextBoxFor(model => model.Data.PrepaymentAccount, new { @value = "Data.PrepaymentAccount", @valueUpdate = "'input'" }, new { @class = "txt-upper" })
+                              @Html.KoSageButton("btnFinderPrepaymentAccount", null, new { @class = "icon btn-search ", @id = "btnFinderPrepaymentAccount", @tabindex = "-1" })
+                          </div>
+                      </td>
+                      <td>@Html.KoSpan(new { text = "accountGroupUI.accountGroupModel.PrepaymentDesc()" })</td>
+
+                  </tr>
+                  @if (Model.IsRetainage)
+                  {
+                      <tr>
+                          <td class="">@Html.SageLabelFor(model => model.Data.RetainageAccount, new { @class = "" })</td>
+                          <td>
+                              <div class="wrapper">
+                                  @Html.KoSageTextBoxFor(model => model.Data.RetainageAccount, new { @value = "Data.RetainageAccount", @valueUpdate = "'input'" }, new { @class = "txt-upper" })
+                                  @Html.KoSageButton("btnFinderRetainageAccount", null, new { @class = "icon btn-search ", @id = "btnFinderRetainageAccount", @tabindex = "-1" })
+                              </div>
+                          </td>
+                          <td>@Html.KoSpan(new { text = "accountGroupUI.accountGroupModel.RetainageDesc()" })</td>
+                      </tr>
+                  }
+
+                  @if (Model.IsMulticurrency)
+                  {
+                      <tr>
+                          <td class="">@Html.SageLabel("currency", AccountGroupsResx.Currency, new { @class = "" })</td>
+                          <td>
+                              <div class="wrapper">
+                                  @Html.KoSageTextBoxFor(model => model.Data.CurrencyCodeforAccount, new { @sagevalue = "Data.CurrencyCodeforAccount" }, new { @class = "txt-upper", @formatTextbox = "alphaNumeric" })
+                                  @Html.KoSageButton("btnFinderCurrency", null, new { @class = "icon btn-search ", @id = "btnFinderCurrency", @tabindex = "-1" })
+                              </div>
+                          </td>
+                          <td>@Html.KoSpan(new { text = "accountGroupUI.accountGroupModel.CurrencyDesc()" })</td>
+                      </tr>
+                      <tr>
+                          <td class="">@Html.SageLabelFor(model => model.Data.UnrealizedExchangeGainAccount, new { @class = "" })</td>
+                          <td>
+                              <div class="wrapper">
+                                  @Html.KoSageTextBoxFor(model => model.Data.UnrealizedExchangeGainAccount, new { @value = "Data.UnrealizedExchangeGainAccount", @valueUpdate = "'input'", @disable = "Data.ComputedGainOrLoss" }, new { @class = "txt-upper" })
+                                  @Html.KoSageButton("btnFinderUnExchangeGainAccount", new { @disable = "Data.ComputedGainOrLoss" }, new { @class = "icon btn-search ", @id = "btnFinderUnExchangeGainAccount", @tabindex = "-1" })
+                              </div>
+                          </td>
+                          <td>@Html.KoSpan(new { text = "accountGroupUI.accountGroupModel.UnrealizedExchangeGainDesc()" })</td>
+                      </tr>
+                      <tr>
+                          <td class="">@Html.SageLabelFor(model => model.Data.UnrealizedExchangeLossAccount, new { @class = "" })</td>
+                          <td>
+                              <div class="wrapper">
+                                  @Html.KoSageTextBoxFor(model => model.Data.UnrealizedExchangeLossAccount, new { @value = "Data.UnrealizedExchangeLossAccount", @valueUpdate = "'input'", @disable = "Data.ComputedGainOrLoss" }, new { @class = "txt-upper" })
+                                  @Html.KoSageButton("btnFinderUnExchangeLossAccount", new { @disable = "Data.ComputedGainOrLoss" }, new { @class = "icon btn-search ", @id = "btnFinderUnExchangeLossAccount", @tabindex = "-1" })
+                              </div>
+                          </td>
+                          <td>@Html.KoSpan(new { text = "accountGroupUI.accountGroupModel.UnrealizedExchangeLossDesc()" })</td>
+
+                      </tr>
+                      <tr>
+                          <td class="">@Html.SageLabelFor(model => model.Data.ExchangeGainAccount, new { @class = "" })</td>
+                          <td>
+                              <div class="wrapper">
+                                  @Html.KoSageTextBoxFor(model => model.Data.ExchangeGainAccount, new { @value = "Data.ExchangeGainAccount", @valueUpdate = "'input'", @disable = "Data.ComputedFunctionalCurrency" }, new { @class = "txt-upper" })
+                                  @Html.KoSageButton("btnFinderExchangeGainAccount", new { @disable = "Data.ComputedFunctionalCurrency" }, new { @class = "icon btn-search ", @id = "btnFinderExchangeGainAccount", @tabindex = "-1" })
+                              </div>
+                          </td>
+                          <td>@Html.KoSpan(new { text = "accountGroupUI.accountGroupModel.ExchangeGainDesc()" })</td>
+                      </tr>
+                      <tr>
+                          <td class="">@Html.SageLabelFor(model => model.Data.ExchangeLossAccount, new { @class = "" })</td>
+                          <td>
+                              <div class="wrapper">
+                                  @Html.KoSageTextBoxFor(model => model.Data.ExchangeLossAccount, new { @value = "Data.ExchangeLossAccount", @valueUpdate = "'input'", @disable = "Data.ComputedFunctionalCurrency" }, new { @class = "txt-upper" })
+                                  @Html.KoSageButton("btnFinderExchangeLossAccount", new { @disable = "Data.ComputedFunctionalCurrency" }, new { @class = "icon btn-search ", @id = "btnFinderExchangeLossAccount", @tabindex = "-1" })
+                              </div>
+                          </td>
+                          <td>@Html.KoSpan(new { text = "accountGroupUI.accountGroupModel.ExchangeLossDesc()" })</td>
+                      </tr>
+                      <tr>
+                          <td class="">@Html.SageLabelFor(model => model.Data.ExchangeRoundingAccount, new { @class = "" })</td>
+                          <td>
+                              <div class="wrapper">
+                                  @Html.KoSageTextBoxFor(model => model.Data.ExchangeRoundingAccount, new { @value = "Data.ExchangeRoundingAccount", @valueUpdate = "'input'", @disable = "Data.ComputedFunctionalCurrency" }, new { @class = "txt-upper" })
+                                  @Html.KoSageButton("btnFinderExchangeRoundingAccount", new { @disable = "Data.ComputedFunctionalCurrency" }, new { @class = "icon btn-search ", @id = "btnFinderExchangeRoundingAccount", @tabindex = "-1" })
+                              </div>
+                          </td>
+                          <td>@Html.KoSpan(new { text = "accountGroupUI.accountGroupModel.ExchangeRoundingDesc()" })</td>
+                      </tr>
+                  }
+              </tbody>
+
+          </table>
+
+         </div>
+    <section class="footer-group-1">
+        @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
+        {
+            @Html.KoSageButton("btnSave", new {}, new {@value = CommonResx.Save, @id = "btnSave", @class = "btn btn-primary"})
+            @Html.KoSageButton("btnDelete", new {}, new {@value = CommonResx.Delete, @id = "btnDelete", @class = "btn btn-primary"})
+        }
+    </section>
+    </div>

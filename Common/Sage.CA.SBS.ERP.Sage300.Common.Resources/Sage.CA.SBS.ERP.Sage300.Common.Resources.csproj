@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4BB55006-CF24-43B5-800C-3F9A4685BE9E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sage.CA.SBS.ERP.Sage300.Common.Resources</RootNamespace>
+    <AssemblyName>Sage.CA.SBS.ERP.Sage300.Common.Resources</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>$(SolutionDir)..\Assemblies</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)..\Assemblies</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseDev|AnyCPU'">
+    <OutputPath>bin\ReleaseDev\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseDev|x86'">
+    <OutputPath>bin\x86\ReleaseDev\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountMessagesResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountMessagesResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CommonResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommonResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="AnnotationsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnnotationsResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DataSeedingResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSeedingResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DistributeProrationResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DistributeProrationResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DrillDownResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DrillDownResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicQueryResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DynamicQueryResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuantityCommonResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuantityCommonResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RevaluationResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RevaluationResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SPSCommonResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPSCommonResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesSplitResx.Designer.cs">
+      <DependentUpon>SalesSplitResx.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="TaxesResx.Designer.cs">
+      <DependentUpon>TaxesResx.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DocumentHistory.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentHistory.resx</DependentUpon>
+    </Compile>
+    <Compile Include="EnumerationsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerationsResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GLIntegrationResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GLIntegrationResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GLTransactionResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GLTransactionResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvoiceResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Portal\HelpResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HelpResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Portal\HomePageResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HomePageResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Portal\NavigationResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NavigationResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Portal\SearchResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\ExpressionsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExpressionsResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\OperatorsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OperatorsResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\WorkerResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkerResx.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AccountMessagesResx.es.resx" />
+    <EmbeddedResource Include="AccountMessagesResx.fr-CA.resx" />
+    <EmbeddedResource Include="AccountMessagesResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccountMessagesResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountMessagesResx.zh-Hans.resx" />
+    <EmbeddedResource Include="AccountMessagesResx.zh-Hant.resx" />
+    <EmbeddedResource Include="AnnotationsResx.es.resx" />
+    <EmbeddedResource Include="AnnotationsResx.fr-CA.resx" />
+    <EmbeddedResource Include="AnnotationsResx.zh-Hans.resx" />
+    <EmbeddedResource Include="AnnotationsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="CommonResx.es.resx" />
+    <EmbeddedResource Include="CommonResx.fr-CA.resx" />
+    <EmbeddedResource Include="CommonResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommonResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnnotationsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AnnotationsResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonResx.zh-Hans.resx" />
+    <EmbeddedResource Include="CommonResx.zh-Hant.resx" />
+    <EmbeddedResource Include="DataSeedingResx.es.resx" />
+    <EmbeddedResource Include="DataSeedingResx.fr-CA.resx" />
+    <EmbeddedResource Include="DataSeedingResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DataSeedingResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataSeedingResx.zh-Hans.resx" />
+    <EmbeddedResource Include="DataSeedingResx.zh-Hant.resx" />
+    <EmbeddedResource Include="DistributeProrationResx.es.resx" />
+    <EmbeddedResource Include="DistributeProrationResx.fr-CA.resx" />
+    <EmbeddedResource Include="DistributeProrationResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DistributeProrationResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DistributeProrationResx.zh-Hans.resx" />
+    <EmbeddedResource Include="DistributeProrationResx.zh-Hant.resx" />
+    <EmbeddedResource Include="DocumentHistory.es.resx" />
+    <EmbeddedResource Include="DocumentHistory.fr-CA.resx" />
+    <EmbeddedResource Include="DocumentHistory.zh-Hans.resx" />
+    <EmbeddedResource Include="DocumentHistory.zh-Hant.resx" />
+    <EmbeddedResource Include="DrillDownResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DrillDownResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DynamicQueryResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DynamicQueryResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GLTransactionResx.es.resx" />
+    <EmbeddedResource Include="GLTransactionResx.fr-CA.resx" />
+    <EmbeddedResource Include="Portal\HelpResx.es.resx" />
+    <EmbeddedResource Include="Portal\HomePageResx.es.resx" />
+    <EmbeddedResource Include="Portal\NavigationResx.es.resx" />
+    <EmbeddedResource Include="Portal\SearchResx.es.resx" />
+    <EmbeddedResource Include="QuantityCommonResx.es.resx" />
+    <EmbeddedResource Include="QuantityCommonResx.fr-CA.resx" />
+    <EmbeddedResource Include="QuantityCommonResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuantityCommonResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuantityCommonResx.zh-Hans.resx" />
+    <EmbeddedResource Include="QuantityCommonResx.zh-Hant.resx" />
+    <EmbeddedResource Include="RevaluationResx.es.resx" />
+    <EmbeddedResource Include="RevaluationResx.fr-CA.resx" />
+    <EmbeddedResource Include="RevaluationResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RevaluationResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RevaluationResx.zh-Hans.resx" />
+    <EmbeddedResource Include="RevaluationResx.zh-Hant.resx" />
+    <EmbeddedResource Include="GLTransactionResx.zh-Hans.resx" />
+    <EmbeddedResource Include="GLTransactionResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Portal\HelpResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Portal\HelpResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Portal\HomePageResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Portal\HomePageResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Portal\NavigationResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Portal\NavigationResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Portal\SearchResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Portal\SearchResx.zh-Hant.resx" />
+    <EmbeddedResource Include="SalesSplitResx.es.resx" />
+    <EmbeddedResource Include="SalesSplitResx.fr-CA.resx" />
+    <EmbeddedResource Include="SalesSplitResx.zh-Hans.resx" />
+    <EmbeddedResource Include="SalesSplitResx.zh-Hant.resx" />
+    <EmbeddedResource Include="SPSCommonResx.es.resx" />
+    <EmbeddedResource Include="SPSCommonResx.fr-CA.resx" />
+    <EmbeddedResource Include="SPSCommonResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SPSCommonResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SPSCommonResx.zh-Hant.resx" />
+    <EmbeddedResource Include="SPSCommonResx.zh-Hans.resx" />
+    <EmbeddedResource Include="SalesSplitResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SalesSplitResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaxesResx.es.resx" />
+    <EmbeddedResource Include="TaxesResx.fr-CA.resx" />
+    <EmbeddedResource Include="TaxesResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TaxesResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentHistory.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DocumentHistory.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnumerationsResx.es.resx" />
+    <EmbeddedResource Include="EnumerationsResx.fr-CA.resx" />
+    <EmbeddedResource Include="EnumerationsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EnumerationsResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnumerationsResx.zh-Hans.resx" />
+    <EmbeddedResource Include="EnumerationsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="GLTransactionResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GLTransactionResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GLIntegrationResx.es.resx" />
+    <EmbeddedResource Include="GLIntegrationResx.fr-CA.resx" />
+    <EmbeddedResource Include="GLIntegrationResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GLIntegrationResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GLIntegrationResx.zh-Hans.resx" />
+    <EmbeddedResource Include="GLIntegrationResx.zh-Hant.resx" />
+    <EmbeddedResource Include="InvoiceResx.es.resx" />
+    <EmbeddedResource Include="InvoiceResx.fr-CA.resx" />
+    <EmbeddedResource Include="InvoiceResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>InvoiceResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoiceResx.zh-Hans.resx" />
+    <EmbeddedResource Include="InvoiceResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Portal\HelpResx.fr-CA.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>HelpResx.fr-CA.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Portal\HelpResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>HelpResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Portal\HomePageResx.fr-CA.resx" />
+    <EmbeddedResource Include="Portal\HomePageResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>HomePageResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Portal\NavigationResx.fr-CA.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Portal\NavigationResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>NavigationResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Portal\SearchResx.fr-CA.resx" />
+    <EmbeddedResource Include="Portal\SearchResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SearchResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaxesResx.zh-Hans.resx" />
+    <EmbeddedResource Include="TaxesResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Utilities\ExpressionsResx.es.resx" />
+    <EmbeddedResource Include="Utilities\ExpressionsResx.fr-CA.resx" />
+    <EmbeddedResource Include="Utilities\ExpressionsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExpressionsResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utilities\ExpressionsResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Utilities\ExpressionsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Utilities\OperatorsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OperatorsResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utilities\WorkerResx.es.resx" />
+    <EmbeddedResource Include="Utilities\WorkerResx.fr-CA.resx" />
+    <EmbeddedResource Include="Utilities\WorkerResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WorkerResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utilities\WorkerResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Utilities\WorkerResx.zh-Hant.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

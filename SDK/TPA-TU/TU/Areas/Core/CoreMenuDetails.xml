@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Navigation>
+
+  <!--First Level Menu Items Section Starts-->
+
+  <item>
+    <MenuID>101</MenuID>
+    <MenuName>Home</MenuName>
+    <ResourceKey>Home</ResourceKey>
+    <ParentMenuID>0</ParentMenuID>
+    <IsGroupHeader>false</IsGroupHeader>
+    <ScreenURL>N/A</ScreenURL>
+    <MenuItemLevel>1</MenuItemLevel>
+    <MenuItemOrder>0</MenuItemOrder>
+    <ColOrder>-1</ColOrder>
+    <SecurityResourceKey>N/A</SecurityResourceKey>
+    <IsReport>false</IsReport>
+    <IsActive>true</IsActive>
+    <IsGroupEnd>false</IsGroupEnd>
+    <IsWidget>false</IsWidget>
+    <Isintelligence>false</Isintelligence>
+  </item>
+  <item>
+    <MenuID>102</MenuID>
+    <MenuName>Task</MenuName>
+    <ResourceKey>Task</ResourceKey>
+    <ParentMenuID>0</ParentMenuID>
+    <IsGroupHeader>false</IsGroupHeader>
+    <ScreenURL>N/A</ScreenURL>
+    <MenuItemLevel>1</MenuItemLevel>
+    <MenuItemOrder>0</MenuItemOrder>
+    <ColOrder>-1</ColOrder>
+    <SecurityResourceKey>N/A</SecurityResourceKey>
+    <IsReport>false</IsReport>
+    <IsActive>true</IsActive>
+    <IsGroupEnd>false</IsGroupEnd>
+    <IsWidget>false</IsWidget>
+    <Isintelligence>false</Isintelligence>
+  </item>
+  <item>
+    <MenuID>103</MenuID>
+    <MenuName>Projects</MenuName>
+    <ResourceKey>Projects</ResourceKey>
+    <ParentMenuID>0</ParentMenuID>
+    <IsGroupHeader>false</IsGroupHeader>
+    <ScreenURL>N/A</ScreenURL>
+    <MenuItemLevel>1</MenuItemLevel>
+    <MenuItemOrder>0</MenuItemOrder>
+    <ColOrder>-1</ColOrder>
+    <SecurityResourceKey>N/A</SecurityResourceKey>
+    <IsReport>false</IsReport>
+    <IsActive>true</IsActive>
+    <IsGroupEnd>false</IsGroupEnd>
+    <IsWidget>false</IsWidget>
+    <Isintelligence>false</Isintelligence>
+  </item>
+
+  <!--First Level Menu Items Section End-->
+</Navigation>

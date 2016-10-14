@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="Sage.CNA.CloudStatus" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="4" osVersion="*" schemaVersion="2014-06.2.4">
+  <Role name="Sage.CNA.Web.CloudStatus">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="cloudstatusadmin" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCEFSkgFKuZ7GRT72xftCZ/68wDQYJKoZIhvcNAQEBBQAEggEATfTbSrAgIJPX0f7YFhmeNbxdr6h/yd8YynfRx56K0SXUeseLhWcsHXaShiRYtKivKDPwRHkgetIECPgD0vvg3OAbWY3rWPVMys0l1rgofuTtK/pjoHaPjPGBYAAj2mVXaUA2SPodVDZ3pI8L/IrKwpglmWxxT+BwF6Bx03nLGf3DXA81JZrFhogd7KjZ1MEVyxz1v+1WjU4rUVQFlgy1fDqT8GLKVdimB7lAW/uRAggwpBMPmawRiDUqGc0IMnL4c8H7suw4ziSzNYgIz4CAWshpz7GyisEgHNzjgmHe1uGM6zPyWNLrRbpoBp7CNjhIjTjyA6dVk14B7NrvTcbvtTAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECKJBT9SjL5bigBAuZF48CRy0CjUWxhEZI5Ka" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2016-04-16T23:59:59.0000000+05:30" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="BE8E8024547B0FEB15132CF23CFECF559B724468" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+</ServiceConfiguration>

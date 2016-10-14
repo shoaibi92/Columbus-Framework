@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Screens>
+  <Screen Name="TUAccountGroup">
+    <Control Name="accountGroupHeader" Type="Label" Label="xxx" Hide="true" Disable="true"/>
+    <Control Name="accountGroupCode" Type="Label" Label="group code xxx" Hide="false" Disable="true"/>
+    
+
+  </Screen>
+  
+</Screens>

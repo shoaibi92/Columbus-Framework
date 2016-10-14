@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Navigation>
+
+  <!--Second Level Menu Item, define the menu showed on Sage 300 online portal menu bar-->
+
+  <item>
+    <MenuID>TU2000</MenuID>
+    <MenuName>TPA Accounts</MenuName>
+    <ResourceKey>TPA</ResourceKey>
+    <ParentMenuID>101</ParentMenuID>
+    <IsGroupHeader>false</IsGroupHeader>
+    <ScreenURL>N/A</ScreenURL>
+    <MenuItemLevel>2</MenuItemLevel>
+    <MenuItemOrder>4</MenuItemOrder>
+    <ColOrder>-1</ColOrder>
+    <SecurityResourceKey>N/A</SecurityResourceKey>
+    <IsReport>false</IsReport>
+    <IsActive>true</IsActive>
+    <IsGroupEnd>false</IsGroupEnd>
+    <IsWidget>false</IsWidget>
+    <Isintelligence>false</Isintelligence>
+  </item>
+
+  <!--Third Level Menu Items Section Starts For Accounts Set/Group-->
+
+  <item>
+    <MenuID>TU3000</MenuID>
+    <MenuName>TU Account Set</MenuName>
+    <ResourceKey>TU_Account_Set</ResourceKey>
+    <ParentMenuID>TU2000</ParentMenuID>
+    <IsGroupHeader>false</IsGroupHeader>
+    <ScreenURL>N/A</ScreenURL>
+    <MenuItemLevel>3</MenuItemLevel>
+    <MenuItemOrder>1</MenuItemOrder>
+    <ColOrder>-1</ColOrder>
+    <SecurityResourceKey>N/A</SecurityResourceKey>
+    <IsReport>false</IsReport>
+    <IsActive>true</IsActive>
+    <IsGroupEnd>false</IsGroupEnd>
+    <IsWidget>false</IsWidget>
+    <Isintelligence>false</Isintelligence>
+  </item>
+  <item>
+    <MenuID>TU3001</MenuID>
+    <MenuName>TU Accountd Group</MenuName>
+    <ResourceKey>TU_Account_Group</ResourceKey>
+    <ParentMenuID>TU2000</ParentMenuID>
+    <IsGroupHeader>false</IsGroupHeader>
+    <ScreenURL>N/A</ScreenURL>
+    <MenuItemLevel>3</MenuItemLevel>
+    <MenuItemOrder>2</MenuItemOrder>
+    <ColOrder>-1</ColOrder>
+    <SecurityResourceKey>N/A</SecurityResourceKey>
+    <IsReport>true</IsReport>
+    <IsActive>true</IsActive>
+    <IsGroupEnd>true</IsGroupEnd>
+    <IsWidget>false</IsWidget>
+    <Isintelligence>false</Isintelligence>
+  </item>
+  <!--Third Level Menu Items Section End For Accounts Set/Group-->
+
+  <!--Fourth Level Menu Items Section Start For Accounts Set/Group-->
+
+  <item>
+    <MenuID>TU4000</MenuID>
+    <MenuName>TU Account Set Demo</MenuName>
+    <ResourceKey>TU_Account_Set</ResourceKey>
+    <ParentMenuID>TU3000</ParentMenuID>
+    <IsGroupHeader>true</IsGroupHeader>
+    <ScreenURL>N/A</ScreenURL>
+    <MenuItemLevel>4</MenuItemLevel>
+    <MenuItemOrder>1</MenuItemOrder>
+    <ColOrder>1</ColOrder>
+    <SecurityResourceKey>N/A</SecurityResourceKey>
+    <IsReport>false</IsReport>
+    <IsActive>true</IsActive>
+    <IsGroupEnd>false</IsGroupEnd>
+    <IsWidget>false</IsWidget>
+    <Isintelligence>false</Isintelligence>
+    <ModuleName>TU</ModuleName>
+  </item>
+  <item>
+    <MenuID>TU4001</MenuID>
+    <MenuName>TU Account Set 1</MenuName>
+    <ResourceKey>TU_Account_Set_1</ResourceKey>
+    <ParentMenuID>TU3000</ParentMenuID>
+    <IsGroupHeader>false</IsGroupHeader>
+    <ScreenURL>TU/AccountGroup</ScreenURL>
+    <MenuItemLevel>4</MenuItemLevel>
+    <MenuItemOrder>2</MenuItemOrder>
+    <ColOrder>1</ColOrder>
+    <SecurityResourceKey>TUAccountSet1</SecurityResourceKey>
+    <IsReport>false</IsReport>
+    <IsActive>true</IsActive>
+    <IsGroupEnd>false</IsGroupEnd>
+    <IsWidget>false</IsWidget>
+    <Isintelligence>false</Isintelligence>
+    <ModuleName>TU</ModuleName>
+  </item>
+  <item>
+    <MenuID>TU4002</MenuID>
+    <MenuName>TU Account Set 2</MenuName>
+    <ResourceKey>TU_Account_Set_2</ResourceKey>
+    <ParentMenuID>TU3000</ParentMenuID>
+    <IsGroupHeader>false</IsGroupHeader>
+    <ScreenURL>TU/AccountGroup</ScreenURL>
+    <MenuItemLevel>4</MenuItemLevel>
+    <MenuItemOrder>3</MenuItemOrder>
+    <ColOrder>1</ColOrder>
+    <SecurityResourceKey>TUAccountSet2</SecurityResourceKey>
+    <IsReport>false</IsReport>
+    <IsActive>true</IsActive>
+    <IsGroupEnd>true</IsGroupEnd>
+    <IsWidget>false</IsWidget>
+    <Isintelligence>false</Isintelligence>
+    <ModuleName>TU</ModuleName>
+  </item>
+  
+  <item>
+    <MenuID>TU4003</MenuID>
+    <MenuName>TU Account Group Demo</MenuName>
+    <ResourceKey>TU_Account_Group</ResourceKey>
+    <ParentMenuID>TU3001</ParentMenuID>
+    <IsGroupHeader>true</IsGroupHeader>
+    <ScreenURL>N/A</ScreenURL>
+    <MenuItemLevel>4</MenuItemLevel>
+    <MenuItemOrder>1</MenuItemOrder>
+    <ColOrder>1</ColOrder>
+    <SecurityResourceKey>N/A</SecurityResourceKey>
+    <IsReport>false</IsReport>
+    <IsActive>true</IsActive>
+    <IsGroupEnd>false</IsGroupEnd>
+    <IsWidget>false</IsWidget>
+    <Isintelligence>false</Isintelligence>
+    <ModuleName>TU</ModuleName>
+  </item>
+  <item>
+    <MenuID>TU4004</MenuID>
+    <MenuName>TU Account Group 1</MenuName>
+    <ResourceKey>TU_Account_Group_1</ResourceKey>
+    <ParentMenuID>TU3001</ParentMenuID>
+    <IsGroupHeader>false</IsGroupHeader>
+    <ScreenURL>TU/AccountGroup</ScreenURL>
+    <MenuItemLevel>4</MenuItemLevel>
+    <MenuItemOrder>2</MenuItemOrder>
+    <ColOrder>1</ColOrder>
+    <SecurityResourceKey>TUACCOUNTGROUP1</SecurityResourceKey>
+    <IsReport>false</IsReport>
+    <IsActive>true</IsActive>
+    <IsGroupEnd>false</IsGroupEnd>
+    <IsWidget>false</IsWidget>
+    <Isintelligence>false</Isintelligence>
+    <ModuleName>TU</ModuleName>
+  </item>
+  <item>
+    <MenuID>TU4005</MenuID>
+    <MenuName>TU Account Group 2</MenuName>
+    <ResourceKey>TU_Account_Group_2</ResourceKey>
+    <ParentMenuID>TU3001</ParentMenuID>
+    <IsGroupHeader>false</IsGroupHeader>
+    <ScreenURL>TU/AccountGroup</ScreenURL>
+    <MenuItemLevel>4</MenuItemLevel>
+    <MenuItemOrder>3</MenuItemOrder>
+    <ColOrder>1</ColOrder>
+    <SecurityResourceKey>TUACCOUNTGROUP2</SecurityResourceKey>
+    <IsReport>false</IsReport>
+    <IsActive>true</IsActive>
+    <IsGroupEnd>true</IsGroupEnd>
+    <IsWidget>false</IsWidget>
+    <Isintelligence>false</Isintelligence>
+    <ModuleName>TU</ModuleName>
+  </item>
+
+  <!--Fourth Level Menu Items Section End For Accounts Set/Group demo-->
+
+</Navigation>

@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0537E560-AA8B-4E80-AE52-0097CA58F35D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sage.CA.SBS.ERP.Sage300.WorkerProcess.Host</RootNamespace>
+    <AssemblyName>Sage.CA.SBS.ERP.Sage300.WorkerProcess.Host</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <RoleType>Worker</RoleType>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>3b213c28</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)..\Assemblies</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\..\..\packages\EPPlus.3.1.3.3\lib\net35\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Microsoft.Data.Edm.5.6.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Microsoft.Data.OData.5.6.4\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Microsoft.Data.Services.Client.5.6.4\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling">
+      <HintPath>..\..\..\packages\EnterpriseLibrary.ExceptionHandling.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\Solutions\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.WindowsAzure.ConfigurationManager.2.0.0.0\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Diagnostics, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=3.1.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\WindowsAzure.Storage.3.1.0.1\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="NewRelic.Api.Agent, Version=4.2.185.0, Culture=neutral, PublicKeyToken=06552fced0b33d87, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\NewRelicWindowsAzure.4.2.185.0\lib\NewRelic.Api.Agent.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.AP.BusinessRepository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.AP.BusinessRepository.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.AP.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.AP.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.AP.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.AP.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.AP.Resources, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.AP.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.AP.Services, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.AP.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.AR.BusinessRepository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.AR.BusinessRepository.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.AR.Resources, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.AR.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.AR.Services, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.AR.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.AS.BusinessRepository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.AS.BusinessRepository.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.AS.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.AS.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.AS.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.AS.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.AS.Resources, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.AS.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.AS.Services, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.AS.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.BusinessRepository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.CS.BusinessRepository.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.CS.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.CS.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Resources, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.CS.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Services, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.CS.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.GL.BusinessRepository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.GL.BusinessRepository.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.GL.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.GL.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.GL.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.GL.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.GL.Resources, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.GL.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.GL.Services, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.GL.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.IC.BusinessRepository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" Condition="'$(SolutionName)'!='DevR1'">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.IC.BusinessRepository.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.IC.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" Condition="'$(SolutionName)'!='DevR1'">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.IC.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.IC.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" Condition="'$(SolutionName)'!='DevR1'">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.IC.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.IC.Resources, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" Condition="'$(SolutionName)'!='DevR1'">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.IC.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.IC.Services, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" Condition="'$(SolutionName)'!='DevR1'">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.IC.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.OE.Interfaces">
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.OE.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.OE.Models">
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.OE.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.OE.Resources">
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.OE.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.OE.Services">
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.OE.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.PO.BusinessRepository">
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.PO.BusinessRepository.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.PO.Interfaces">
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.PO.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.PO.Models">
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.PO.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.PO.Resources">
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.PO.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.PO.Services">
+      <HintPath>..\..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.PO.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\System.Spatial.5.6.4\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Solutions\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkerRole.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Template_RoleStartup_Bootstrapper.cmd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="InstallService.cmd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="EncryptDecryptValues.cmd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="InstallUtil.exe.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="newrelic.cmd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="NewRelicAgent_x64_4.2.185.0.msi">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="NewRelicServerMonitor_x64_3.3.3.0.msi">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <Content Include="RoleStartup_Bootstrapper.cmd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Sage.CNA.WindowsService.exe.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Template_app.config" />
+    <None Include="Template_WindowsService.exe.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InstallUtil.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="InstallUtilLib.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\AP\Sage.CA.SBS.ERP.Sage300.AP.BusinessRepository\Sage.CA.SBS.ERP.Sage300.AP.BusinessRepository.csproj">
+      <Project>{63bd6794-9f07-4a15-9a25-0ea210569830}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.AP.BusinessRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\AP\Sage.CA.SBS.ERP.Sage300.AP.Interfaces\Sage.CA.SBS.ERP.Sage300.AP.Interfaces.csproj">
+      <Project>{7ffa0bdc-c3c9-405a-8d01-a169396ee59f}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.AP.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\AP\Sage.CA.SBS.ERP.Sage300.AP.Models\Sage.CA.SBS.ERP.Sage300.AP.Models.csproj">
+      <Project>{1b84fcae-7113-41ae-8746-9f8b5b635fb9}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.AP.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\AP\Sage.CA.SBS.ERP.Sage300.AP.Resources\Sage.CA.SBS.ERP.Sage300.AP.Resources.csproj">
+      <Project>{cdb16fd3-c8b1-4520-a9f3-0ad2b6328b0e}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.AP.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\AP\Sage.CA.SBS.ERP.Sage300.AP.Services\Sage.CA.SBS.ERP.Sage300.AP.Services.csproj">
+      <Project>{35eb3451-d6ca-4f8d-a77f-d869f4397e42}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.AP.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\AR\Sage.CA.SBS.ERP.Sage300.AR.BusinessRepository\Sage.CA.SBS.ERP.Sage300.AR.BusinessRepository.csproj">
+      <Project>{2c107c09-71b5-4026-aaf8-6eb7f7cb3bc4}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.AR.BusinessRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Columbus-AR\Sage.CA.SBS.ERP.Sage300.AR.Interfaces\Sage.CA.SBS.ERP.Sage300.AR.Interfaces.csproj">
+      <Project>{9ed7aa0c-7c04-45d5-a2ee-b3822a34646d}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.AR.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Columbus-AR\Sage.CA.SBS.ERP.Sage300.AR.Models\Sage.CA.SBS.ERP.Sage300.AR.Models.csproj">
+      <Project>{69fd44a6-f2d9-44ac-80e3-5f31022169af}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.AR.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\AR\Sage.CA.SBS.ERP.Sage300.AR.Resources\Sage.CA.SBS.ERP.Sage300.AR.Resources.csproj">
+      <Project>{8ca2d82d-ac17-4b67-82c1-112e8e09336b}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.AR.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\AR\Sage.CA.SBS.ERP.Sage300.AR.Services\Sage.CA.SBS.ERP.Sage300.AR.Services.csproj">
+      <Project>{061988b1-b17c-42ee-a244-bf0a13fcfe29}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.AR.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository\Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.csproj">
+      <Project>{266375de-affe-47e2-8ad2-d34b018e91db}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository\Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.csproj">
+      <Project>{266375de-affe-47e2-8ad2-d34b018e91db}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Sage.CA.SBS.ERP.Sage300.Common.Cryptography\Sage.CA.SBS.ERP.Sage300.Common.Cryptography.csproj">
+      <Project>{70f6d5a9-b512-422a-b896-a1778a0781ea}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Cryptography</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Sage.CA.SBS.ERP.Sage300.Common.Exceptions\Sage.CA.SBS.ERP.Sage300.Common.Exceptions.csproj">
+      <Project>{7bf38564-09a6-4943-8249-d0b2a3e04516}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Sage.CA.SBS.ERP.Sage300.Common.Exceptions\Sage.CA.SBS.ERP.Sage300.Common.Exceptions.csproj">
+      <Project>{7bf38564-09a6-4943-8249-d0b2a3e04516}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Sage.CA.SBS.ERP.Sage300.Common.Interfaces\Sage.CA.SBS.ERP.Sage300.Common.Interfaces.csproj">
+      <Project>{2df9d920-e05a-44fe-91c7-4fce7b3a2b28}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Sage.CA.SBS.ERP.Sage300.Common.Interfaces\Sage.CA.SBS.ERP.Sage300.Common.Interfaces.csproj">
+      <Project>{2df9d920-e05a-44fe-91c7-4fce7b3a2b28}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Sage.CA.SBS.ERP.Sage300.Common.Models\Sage.CA.SBS.ERP.Sage300.Common.Models.csproj">
+      <Project>{74ba53c3-eb09-4226-9985-bad7306db937}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Sage.CA.SBS.ERP.Sage300.Common.Models\Sage.CA.SBS.ERP.Sage300.Common.Models.csproj">
+      <Project>{74ba53c3-eb09-4226-9985-bad7306db937}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Sage.CA.SBS.ERP.Sage300.Common.Resources\Sage.CA.SBS.ERP.Sage300.Common.Resources.csproj">
+      <Project>{4bb55006-cf24-43b5-800c-3f9a4685be9e}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Sage.CA.SBS.ERP.Sage300.Common.Resources\Sage.CA.SBS.ERP.Sage300.Common.Resources.csproj">
+      <Project>{4bb55006-cf24-43b5-800c-3f9a4685be9e}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Sage.CA.SBS.ERP.Sage300.Common.Services\Sage.CA.SBS.ERP.Sage300.Common.Services.csproj">
+      <Project>{c5955f5c-27c8-49e2-9035-b30eea68786d}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Sage.CA.SBS.ERP.Sage300.Common.Services\Sage.CA.SBS.ERP.Sage300.Common.Services.csproj">
+      <Project>{c5955f5c-27c8-49e2-9035-b30eea68786d}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Sage.CA.SBS.ERP.Sage300.Common.Utilities\Sage.CA.SBS.ERP.Sage300.Common.Utilities.csproj">
+      <Project>{9ce25370-dc66-4d61-87b4-aed9a3dc7bd4}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Sage.CA.SBS.ERP.Sage300.Core.Azure\Sage.CA.SBS.ERP.Sage300.Core.Azure.csproj">
+      <Project>{4d45e2da-f580-4a52-8be0-da02a6f4f099}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Core.Azure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Sage.CA.SBS.ERP.Sage300.Core.Azure\Sage.CA.SBS.ERP.Sage300.Core.Azure.csproj">
+      <Project>{4d45e2da-f580-4a52-8be0-da02a6f4f099}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Core.Azure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Sage.CA.SBS.ERP.Sage300.Core.Cache\Sage.CA.SBS.ERP.Sage300.Core.Cache.csproj">
+      <Project>{715a0012-45cd-40ca-b7d8-9bdac6db70a8}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Core.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Sage.CA.SBS.ERP.Sage300.Core.Cache\Sage.CA.SBS.ERP.Sage300.Core.Cache.csproj">
+      <Project>{715a0012-45cd-40ca-b7d8-9bdac6db70a8}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Core.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Sage.CA.SBS.ERP.Sage300.Core.Configuration\Sage.CA.SBS.ERP.Sage300.Core.Configuration.csproj">
+      <Project>{6754d33a-a4fe-4661-a16f-7b48187fb459}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Core.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Sage.CA.SBS.ERP.Sage300.Core.Configuration\Sage.CA.SBS.ERP.Sage300.Core.Configuration.csproj">
+      <Project>{6754d33a-a4fe-4661-a16f-7b48187fb459}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Core.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Sage.CA.SBS.ERP.Sage300.Core.Exception\Sage.CA.SBS.ERP.Sage300.Core.Exceptions.csproj">
+      <Project>{eafda517-f8f7-4863-8fa7-935da4c5c50b}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Core.Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Sage.CA.SBS.ERP.Sage300.Core.Exception\Sage.CA.SBS.ERP.Sage300.Core.Exceptions.csproj">
+      <Project>{eafda517-f8f7-4863-8fa7-935da4c5c50b}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Core.Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Sage.CA.SBS.ERP.Sage300.Core.ExportImport\Sage.CA.SBS.ERP.Sage300.Core.ExportImport.csproj">
+      <Project>{dcec0dd4-3b60-4c1d-9aa9-6b788da5d573}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Core.ExportImport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Sage.CA.SBS.ERP.Sage300.Core.ExportImport\Sage.CA.SBS.ERP.Sage300.Core.ExportImport.csproj">
+      <Project>{dcec0dd4-3b60-4c1d-9aa9-6b788da5d573}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Core.ExportImport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Sage.CA.SBS.ERP.Sage300.Core.Interfaces\Sage.CA.SBS.ERP.Sage300.Core.Interfaces.csproj">
+      <Project>{798573ff-cf70-471e-91bf-ae86b3f097f5}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Core.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Sage.CA.SBS.ERP.Sage300.Core.Interfaces\Sage.CA.SBS.ERP.Sage300.Core.Interfaces.csproj">
+      <Project>{798573ff-cf70-471e-91bf-ae86b3f097f5}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Core.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Sage.CA.SBS.ERP.Sage300.Core.Logging\Sage.CA.SBS.ERP.Sage300.Core.Logging.csproj">
+      <Project>{e7d37009-3af2-4c01-8b9c-04e6d9d581da}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Core.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Sage.CA.SBS.ERP.Sage300.Core.Logging\Sage.CA.SBS.ERP.Sage300.Core.Logging.csproj">
+      <Project>{e7d37009-3af2-4c01-8b9c-04e6d9d581da}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Core.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Sage.CA.SBS.ERP.Sage300.Core.Resources\Sage.CA.SBS.ERP.Sage300.Core.Resources.csproj">
+      <Project>{a43d0259-14b6-420b-b76b-a607bd33f20b}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Core.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Sage.CA.SBS.ERP.Sage300.Core.Resources\Sage.CA.SBS.ERP.Sage300.Core.Resources.csproj">
+      <Project>{a43d0259-14b6-420b-b76b-a607bd33f20b}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Core.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CS\Sage.CA.SBS.ERP.Sage300.CS.BusinessRepository\Sage.CA.SBS.ERP.Sage300.CS.BusinessRepository.csproj">
+      <Project>{762d7588-cd67-4965-878a-4ec24be2afa1}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.CS.BusinessRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CS\Sage.CA.SBS.ERP.Sage300.CS.Interfaces\Sage.CA.SBS.ERP.Sage300.CS.Interfaces.csproj">
+      <Project>{2ef720d6-4dc3-45f1-988f-2ef178e7b4a1}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.CS.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CS\Sage.CA.SBS.ERP.Sage300.CS.Models\Sage.CA.SBS.ERP.Sage300.CS.Models.csproj">
+      <Project>{ea20c8df-b75c-49a0-9f4c-55c208f3ce92}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.CS.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CS\Sage.CA.SBS.ERP.Sage300.CS.Resources\Sage.CA.SBS.ERP.Sage300.CS.Resources.csproj">
+      <Project>{1eadb837-a99f-4955-a5f1-6c5019c05a7d}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.CS.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CS\Sage.CA.SBS.ERP.Sage300.CS.Services\Sage.CA.SBS.ERP.Sage300.CS.Services.csproj">
+      <Project>{783ddf54-25d1-48f2-8e19-25704093fbc4}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.CS.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Workflow\Sage.CA.SBS.ERP.Sage300.Workflow.DataAccess\Sage.CA.SBS.ERP.Sage300.Workflow.DataAccess.csproj">
+      <Project>{4c19e3fb-45f0-4283-b7b9-940a2dc39640}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Workflow.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Workflow\Sage.CA.SBS.ERP.Sage300.Workflow.DataAccess\Sage.CA.SBS.ERP.Sage300.Workflow.DataAccess.csproj">
+      <Project>{4c19e3fb-45f0-4283-b7b9-940a2dc39640}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Workflow.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Workflow\Sage.CA.SBS.ERP.Sage300.Workflow.Interfaces\Sage.CA.SBS.ERP.Sage300.Workflow.Interfaces.csproj">
+      <Project>{4391ebc0-8df9-4fe9-afb3-18e38557b754}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Workflow.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Workflow\Sage.CA.SBS.ERP.Sage300.Workflow.Interfaces\Sage.CA.SBS.ERP.Sage300.Workflow.Interfaces.csproj">
+      <Project>{4391ebc0-8df9-4fe9-afb3-18e38557b754}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Workflow.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Workflow\Sage.CA.SBS.ERP.Sage300.Workflow.Models\Sage.CA.SBS.ERP.Sage300.Workflow.Models.csproj">
+      <Project>{b667c745-7c42-4c7c-87aa-bf8c405c6242}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Workflow.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Workflow\Sage.CA.SBS.ERP.Sage300.Workflow.Models\Sage.CA.SBS.ERP.Sage300.Workflow.Models.csproj">
+      <Project>{b667c745-7c42-4c7c-87aa-bf8c405c6242}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Workflow.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Workflow\Sage.CA.SBS.ERP.Sage300.Workflow\Sage.CA.SBS.ERP.Sage300.Workflow.csproj">
+      <Project>{79a1ef90-d4b5-47cb-bb7b-214f9c321f08}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Workflow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Workflow\Sage.CA.SBS.ERP.Sage300.Workflow\Sage.CA.SBS.ERP.Sage300.Workflow.csproj">
+      <Project>{79a1ef90-d4b5-47cb-bb7b-214f9c321f08}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Workflow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.CNA.WindowsService\Sage.CNA.WindowsService.csproj">
+      <Project>{b788f908-ad9b-410a-8c58-4a3656d27ad0}</Project>
+      <Name>Sage.CNA.WindowsService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.CA.SBS.ERP.Sage300.Worker\Sage.CA.SBS.ERP.Sage300.Worker.csproj">
+      <Project>{1ae92266-3662-4ba7-bb09-9ce1516f45b5}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Worker</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.CA.SBS.ERP.Sage300.Worker\Sage.CA.SBS.ERP.Sage300.Worker.csproj">
+      <Project>{1ae92266-3662-4ba7-bb09-9ce1516f45b5}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Worker</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

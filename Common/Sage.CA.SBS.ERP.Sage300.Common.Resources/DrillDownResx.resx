@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AP2100" xml:space="preserve">
+    <value>/AP/InvoiceEntry?batchNumber={0}&amp;entryNumber={1}&amp;actionType={2}</value>
+  </data>
+  <data name="AP3100" xml:space="preserve">
+    <value>/AP/PaymentEntry?batchNo={0}&amp;entryNo={1}&amp;FromScreen={2}</value>
+  </data>
+  <data name="AP4100" xml:space="preserve">
+    <value>/AP/AdjustmentEntry?batchNo={0}&amp;entryNo={1}&amp;actionType={2}</value>
+  </data>
+  <data name="AR2100" xml:space="preserve">
+    <value>/AR/InvoiceEntry?batchNumber={0}&amp;entryNumber={1}&amp;actionType={2}</value>
+  </data>
+  <data name="AR3100" xml:space="preserve">
+    <value>/AR/ReceiptEntry?batchNumber={0}&amp;entryNumber={1}&amp;actionType={2}</value>
+  </data>
+  <data name="AR4100" xml:space="preserve">
+    <value>/AR/AdjustmentEntry?batchNumber={0}&amp;entryNumber={1}&amp;actionType={2}</value>
+  </data>
+  <data name="AR5020" xml:space="preserve">
+    <value>/AR/RefundEntry?batchNumber={0}&amp;entryNumber={1}&amp;actionType={2}</value>
+  </data>
+  <data name="BK2050" xml:space="preserve">
+    <value>/CS/BankTransfer?postSequence={0}&amp;keySequence={1}&amp;sequenceType={2}</value>
+  </data>
+  <data name="BK2300" xml:space="preserve">
+    <value>/CS/BankEntry?sequenceNumber={0}</value>
+  </data>
+  <data name="BK6000" xml:space="preserve">
+    <value>/CS/ReconcileStatement?postSequence={0}&amp;bankSequence={1}&amp;sequenceType={2}</value>
+  </data>
+  <data name="IC3120" xml:space="preserve">
+    <value>/IC/Receipt?id={0}&amp;disableAll={1}</value>
+  </data>
+  <data name="IC3210" xml:space="preserve">
+    <value>/IC/Shipment?id={0}&amp;integratedScreen={1}</value>
+  </data>
+  <data name="IC3310" xml:space="preserve">
+    <value>/IC/Adjustment?id={0}&amp;integratedScreen={1}</value>
+  </data>
+  <data name="IC3410" xml:space="preserve">
+    <value>/IC/Transfer?id={0}&amp;isEditable={1}</value>
+  </data>
+  <data name="IC3530" xml:space="preserve">
+    <value>/IC/InternalUsage?id={0}&amp;disableAll={1}</value>
+  </data>
+  <data name="OE1600" xml:space="preserve">
+    <value>/OE/CreditDebitNoteEntry?drillDownkey={0}&amp;disableAll={1}</value>
+  </data>
+  <data name="OE2200" xml:space="preserve">
+    <value>/OE/ShipmentEntry?drillDownKey={0}&amp;isEditable={1}</value>
+  </data>
+  <data name="PO1310" xml:space="preserve">
+    <value>/PO/ReceiptEntry?sequenceKey={0}&amp;isNavigated={1}</value>
+  </data>
+  <data name="PO1320" xml:space="preserve">
+    <value>/PO/ReturnEntry?sequenceKey={0}&amp;disableAll={1}</value>
+  </data>
+  <data name="PO1400" xml:space="preserve">
+    <value>/PO/InvoiceEntry?invoiceSequence={0}&amp;isDisable={1}</value>
+  </data>
+  <data name="PO1500" xml:space="preserve">
+    <value>/PO/CreditDebitNoteEntry?sequenceKey={0}&amp;disable={1}</value>
+  </data>
+</root>

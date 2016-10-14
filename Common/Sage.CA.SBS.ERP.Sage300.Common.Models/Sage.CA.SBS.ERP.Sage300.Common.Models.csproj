@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{74BA53C3-EB09-4226-9985-BAD7306DB937}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sage.CA.SBS.ERP.Sage300.Common.Models</RootNamespace>
+    <AssemblyName>Sage.CA.SBS.ERP.Sage300.Common.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\Solutions\Dev\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>$(SolutionDir)..\Assemblies</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)..\Assemblies</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseDev|AnyCPU'">
+    <OutputPath>bin\ReleaseDev\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseDev|x86'">
+    <OutputPath>bin\x86\ReleaseDev\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
+      <HintPath>..\..\..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActiveApplication.cs" />
+    <Compile Include="ApplicationModelBase.cs" />
+    <Compile Include="ApplicationType.cs" />
+    <Compile Include="Attributes\EnablementAttribute.cs" />
+    <Compile Include="Attributes\FinderAttribute.cs" />
+    <Compile Include="Attributes\IgnoreExportImportAttribute.cs" />
+    <Compile Include="Attributes\IgnorePreferencesAttribute.cs" />
+    <Compile Include="Attributes\IsMvcSpecificAttribute.cs" />
+    <Compile Include="Attributes\ValidateDateFormatAttribute.cs" />
+    <Compile Include="BillToLocation.cs" />
+    <Compile Include="BusinessEntityField.cs" />
+    <Compile Include="Company.cs" />
+    <Compile Include="CompositeCurrencyRate.cs" />
+    <Compile Include="CurrencyTableDetail.cs" />
+    <Compile Include="Customization\Validators\UserIdValidator.cs" />
+    <Compile Include="Customization\Validators\ValidateListForSelection.cs" />
+    <Compile Include="DistributeProration.cs" />
+    <Compile Include="Email\EmailContent.cs" />
+    <Compile Include="Email\EmailOption.cs" />
+    <Compile Include="Email\EmailResponse.cs" />
+    <Compile Include="DynamicQueryEnumerableResponse.cs" />
+    <Compile Include="Email\EmailUtility.cs" />
+    <Compile Include="Enums\BlobAccessCondition.cs" />
+    <Compile Include="Enums\CardType.cs" />
+    <Compile Include="Enums\DefaultCard.cs" />
+    <Compile Include="Enums\FinderDisplayType.cs" />
+    <Compile Include="Enums\CompanyGainLossAccountingMethod.cs" />
+    <Compile Include="Enums\OptionalFields\YesNo.cs" />
+    <Compile Include="Enums\OptionalFields\FieldType.cs" />
+    <Compile Include="Enums\OptionalFields\ValueSet.cs" />
+    <Compile Include="Enums\Period.cs" />
+    <Compile Include="Enums\ProcessingCommand.cs" />
+    <Compile Include="Enums\ReportProcessType.cs" />
+    <Compile Include="Enums\Revaluation\ProcessCommandCode.cs" />
+    <Compile Include="Enums\Revaluation\RevaluationMethod.cs" />
+    <Compile Include="Enums\SPS\ErrorCode.cs" />
+    <Compile Include="Enums\SPS\SettlementType.cs" />
+    <Compile Include="Enums\Status.cs" />
+    <Compile Include="Enums\TaxIncluded.cs" />
+    <Compile Include="Enums\Transaction.cs" />
+    <Compile Include="Enums\TransTypeReturnStatus.cs" />
+    <Compile Include="Enums\DropShipment\DropShipmentType.cs" />
+    <Compile Include="Enums\UserMessageType.cs" />
+    <Compile Include="Enums\AllowedType.cs" />
+    <Compile Include="Enums\Audit\EventType.cs" />
+    <Compile Include="Enums\BlobPermissions.cs" />
+    <Compile Include="Enums\BooleanType.cs" />
+    <Compile Include="DynamicProperty.cs" />
+    <Compile Include="Enums\CurrencyType.cs" />
+    <Compile Include="Enums\GLIntegration\GLTransactionField.cs" />
+    <Compile Include="Enums\GLIntegration\IncludedSegment.cs" />
+    <Compile Include="Enums\GLIntegration\Separator.cs" />
+    <Compile Include="Enums\GLTransaction\CurrencyType.cs" />
+    <Compile Include="Enums\GLTransaction\ReportFormat.cs" />
+    <Compile Include="Enums\GLTransaction\SortBy.cs" />
+    <Compile Include="Enums\InvoiceEntry\AccountingMethod.cs" />
+    <Compile Include="Enums\InvoiceEntry\ARBatchType.cs" />
+    <Compile Include="Enums\InvoiceEntry\ARInvoiceType.cs" />
+    <Compile Include="Enums\InvoiceEntry\AutoTaxCalculationOnSave.cs" />
+    <Compile Include="Enums\InvoiceEntry\BatchPrintedFlag.cs" />
+    <Compile Include="Enums\InvoiceEntry\BatchStatus.cs" />
+    <Compile Include="Enums\InvoiceEntry\BatchType.cs" />
+    <Compile Include="Enums\EnumItem.cs" />
+    <Compile Include="Enums\EntityReturnCode.cs" />
+    <Compile Include="Enums\ErrorCode.cs" />
+    <Compile Include="Enums\ExportImport\FileType.cs" />
+    <Compile Include="Enums\GLIntegration\ConsolidateGLTransactions.cs" />
+    <Compile Include="Enums\GLIntegration\CreateGLTransactionsBy.cs" />
+    <Compile Include="Enums\GLIntegration\DeferGLTransactions.cs" />
+    <Compile Include="Enums\GLIntegration\ProcessCommand.cs" />
+    <Compile Include="Enums\InvoiceEntry\BillingType.cs" />
+    <Compile Include="Enums\InvoiceEntry\Command.cs" />
+    <Compile Include="Enums\InvoiceEntry\Completed.cs" />
+    <Compile Include="Enums\InvoiceEntry\CompletionStatus.cs" />
+    <Compile Include="Enums\InvoiceEntry\CostClass.cs" />
+    <Compile Include="Enums\InvoiceEntry\CurrencyCodeOperator.cs" />
+    <Compile Include="Enums\InvoiceEntry\ARCustOrNatlOverCreditFlag.cs" />
+    <Compile Include="Enums\InvoiceEntry\CustOrNatlOverCreditFlag.cs" />
+    <Compile Include="Enums\InvoiceEntry\DocumentType.cs" />
+    <Compile Include="Enums\InvoiceEntry\ARInvoiceProcessCommand.cs" />
+    <Compile Include="Enums\InvoiceEntry\FiscalPeriod.cs" />
+    <Compile Include="Enums\InvoiceEntry\FromDocument.cs" />
+    <Compile Include="Enums\InvoiceEntry\InvoiceDocumentType.cs" />
+    <Compile Include="Enums\InvoiceEntry\InvoiceEntryRefreshHeader.cs" />
+    <Compile Include="Enums\InvoiceEntry\InvoiceProcessCommand.cs" />
+    <Compile Include="Enums\InvoiceEntry\InvoiceTransactionType.cs" />
+    <Compile Include="Enums\InvoiceEntry\InvoiceType.cs" />
+    <Compile Include="Enums\InvoiceEntry\ItemSerializedLotted.cs" />
+    <Compile Include="Enums\InvoiceEntry\LineType.cs" />
+    <Compile Include="Enums\InvoiceEntry\LockBackSwitch.cs" />
+    <Compile Include="Enums\InvoiceEntry\PredecessorsRateOperation.cs" />
+    <Compile Include="Enums\InvoiceEntry\PrimaryVendor.cs" />
+    <Compile Include="Enums\InvoiceEntry\Printed.cs" />
+    <Compile Include="Enums\InvoiceEntry\ProcessCommand.cs" />
+    <Compile Include="Enums\InvoiceEntry\ProcessCommandCode.cs" />
+    <Compile Include="Enums\InvoiceEntry\ProjectStyle.cs" />
+    <Compile Include="Enums\InvoiceEntry\ProjectType.cs" />
+    <Compile Include="Enums\InvoiceEntry\PropertyCode.cs" />
+    <Compile Include="Enums\InvoiceEntry\ProrationMethod.cs" />
+    <Compile Include="Enums\InvoiceEntry\ProrationVersion.cs" />
+    <Compile Include="Enums\InvoiceEntry\RateOperation.cs" />
+    <Compile Include="Enums\InvoiceEntry\RateOperator.cs" />
+    <Compile Include="Enums\InvoiceEntry\RateOverridden.cs" />
+    <Compile Include="Enums\InvoiceEntry\ReportRetainageTax.cs" />
+    <Compile Include="Enums\InvoiceEntry\ReprorationMethod.cs" />
+    <Compile Include="Enums\InvoiceEntry\RetainageBase.cs" />
+    <Compile Include="Enums\InvoiceEntry\RetainageExchangeRate.cs" />
+    <Compile Include="Enums\InvoiceEntry\ScheduleCalculationMethod.cs" />
+    <Compile Include="Enums\InvoiceEntry\TaxAmountControl.cs" />
+    <Compile Include="Enums\InvoiceEntry\ARTransactionType.cs" />
+    <Compile Include="Enums\InvoiceEntry\TransactionType.cs" />
+    <Compile Include="Enums\InvoiceEntry\Type.cs" />
+    <Compile Include="Enums\InvoiceEntry\ValueSet.cs" />
+    <Compile Include="Enums\MultiUserStatus.cs" />
+    <Compile Include="Enums\ObjectPoolType.cs" />
+    <Compile Include="Enums\Operators.cs" />
+    <Compile Include="Enums\PaperSize.cs" />
+    <Compile Include="Enums\Process\Operation.cs" />
+    <Compile Include="Enums\Process\ProcessStatus.cs" />
+    <Compile Include="Enums\Process\WorkFlowKind.cs" />
+    <Compile Include="Enums\PropertyType.cs" />
+    <Compile Include="Enums\ReportFormat.cs" />
+    <Compile Include="Enums\ResultType.cs" />
+    <Compile Include="IEnumerableResponse.cs" />
+    <Compile Include="Notes\GenericNote.cs" />
+    <Compile Include="ScreenRotoIds.cs" />
+    <Compile Include="Enums\SecurityType.cs" />
+    <Compile Include="Enums\SessionDateWarningType.cs" />
+    <Compile Include="Enums\SortByType.cs" />
+    <Compile Include="Enums\SPS\SpsXmlActionChoice.cs" />
+    <Compile Include="Enums\SPS\SpsRequestProcessCompletedFl.cs" />
+    <Compile Include="Enums\TenantStatus.cs" />
+    <Compile Include="Enums\Vendor\DeliveryMethod.cs" />
+    <Compile Include="EnumValue.cs" />
+    <Compile Include="Error.cs" />
+    <Compile Include="ExportImport\DataMigration.cs" />
+    <Compile Include="ExportImport\ExportRequest.cs" />
+    <Compile Include="ExportImport\Filter.cs" />
+    <Compile Include="ExportImport\ImportRequest.cs" />
+    <Compile Include="ExportImport\ResponseMessage.cs" />
+    <Compile Include="Filter.cs" />
+    <Compile Include="Finder\FinderOption.cs" />
+    <Compile Include="FiscalCalendar.cs" />
+    <Compile Include="FiscalYearSet.cs" />
+    <Compile Include="InvoiceEntry\InvoiceEntryConstants.cs" />
+    <Compile Include="PageOptions.cs" />
+    <Compile Include="GLIntegration\BaseGLIntegrationOptions.cs" />
+    <Compile Include="GLIntegration\BaseGLReferenceIntegration.cs" />
+    <Compile Include="GLIntegration\Fields\BaseGLReferenceIntegrationFields.cs" />
+    <Compile Include="GLIntegration\ReferenceDetail.cs" />
+    <Compile Include="GridColumn.cs" />
+    <Compile Include="GridField.cs" />
+    <Compile Include="GridFilterField.cs" />
+    <Compile Include="GridSchemaModelField.cs" />
+    <Compile Include="InstrumentationData.cs" />
+    <Compile Include="InvoiceEntry\BaseInvoice.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InvoiceEntry\BaseInvoiceBatch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InvoiceEntry\BaseInvoiceDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InvoiceEntry\BaseInvoiceOptionalField.cs" />
+    <Compile Include="InvoiceEntry\Fields\BaseInvoiceBatchFields.cs" />
+    <Compile Include="InvoiceEntry\Fields\BaseInvoiceDetailFields.cs" />
+    <Compile Include="InvoiceEntry\Fields\BaseInvoiceFields.cs" />
+    <Compile Include="InvoiceEntry\Fields\BaseInvoiceOptFieldFields.cs" />
+    <Compile Include="Landlord\Tenant.cs" />
+    <Compile Include="Landlord\User.cs" />
+    <Compile Include="Landlord\UserTenant.cs" />
+    <Compile Include="MultiSelect.cs" />
+    <Compile Include="PaymentInfo\PaymentInfo.cs" />
+    <Compile Include="PaymentInfo\PaymentInfoFields.cs" />
+    <Compile Include="PeriodInfo.cs" />
+    <Compile Include="PivotColumnModelBase.cs" />
+    <Compile Include="PODropShipment\DropShipAddress.cs" />
+    <Compile Include="PODropShipment\Fields\DropShipAddressFields.cs" />
+    <Compile Include="POOEInvoiceEntry\Fields\POOEBaseAdditionalCostFields.cs" />
+    <Compile Include="POOEInvoiceEntry\Fields\POOEBaseDuplicateInvFields.cs" />
+    <Compile Include="POOEInvoiceEntry\Fields\POOEBaseInvCostDistFields.cs" />
+    <Compile Include="POOEInvoiceEntry\Fields\POOEBaseInvDistProrationFields.cs" />
+    <Compile Include="POOEInvoiceEntry\Fields\POOEBaseInvoiceCommentsFields.cs" />
+    <Compile Include="POOEInvoiceEntry\Fields\POOEBaseInvoiceFields.cs" />
+    <Compile Include="POOEInvoiceEntry\Fields\POOEBaseInvoiceFunctionFields.cs" />
+    <Compile Include="POOEInvoiceEntry\Fields\POOEBaseInvoiceLineFields.cs" />
+    <Compile Include="POOEInvoiceEntry\Fields\POOEBaseInvoiceLineLotFields.cs" />
+    <Compile Include="POOEInvoiceEntry\Fields\POOEBaseInvoiceLineSerialFields.cs" />
+    <Compile Include="POOEInvoiceEntry\Fields\POOEBaseInvoiceRecieptsFields.cs" />
+    <Compile Include="POOEInvoiceEntry\Fields\POOEBaseInvPaymentScheduleFields.cs" />
+    <Compile Include="POOEInvoiceEntry\Fields\POOEBaseInvPstCostDistribsFields.cs" />
+    <Compile Include="POOEInvoiceEntry\Fields\POOEInvBaseAddCostsSuperviewFields.cs" />
+    <Compile Include="POOEInvoiceEntry\POOEBaseAdditionalCost.cs" />
+    <Compile Include="POOEInvoiceEntry\POOEBaseDuplicateInvoice.cs" />
+    <Compile Include="POOEInvoiceEntry\POOEBaseInvCostDist.cs" />
+    <Compile Include="POOEInvoiceEntry\POOEBaseInvDistProration.cs" />
+    <Compile Include="POOEInvoiceEntry\POOEBaseInvoice.cs" />
+    <Compile Include="POOEInvoiceEntry\POOEBaseInvoiceComments.cs" />
+    <Compile Include="POOEInvoiceEntry\POOEBaseInvoiceFunction.cs" />
+    <Compile Include="POOEInvoiceEntry\POOEBaseInvoiceLine.cs" />
+    <Compile Include="POOEInvoiceEntry\POOEBaseInvoiceLineLot.cs" />
+    <Compile Include="POOEInvoiceEntry\POOEBaseInvoiceLineSerial.cs" />
+    <Compile Include="POOEInvoiceEntry\POOEBaseInvoiceReciepts.cs" />
+    <Compile Include="POOEInvoiceEntry\POOEBaseInvPaymentSchedule.cs" />
+    <Compile Include="POOEInvoiceEntry\POOEInvBaseAddCostsSuperview.cs" />
+    <Compile Include="POOEInvoiceEntry\POOEBaseInvPstCostDistribs.cs" />
+    <Compile Include="Portal\Constants.cs" />
+    <Compile Include="Portal\Help.cs" />
+    <Compile Include="Portal\MenuHelp.cs" />
+    <Compile Include="Portal\NavigableMenu.cs" />
+    <Compile Include="Portal\WidgetOrder.cs" />
+    <Compile Include="POVendorInformation\Fields\VendorBaseFields.cs" />
+    <Compile Include="Process\ProgressMeter.cs" />
+    <Compile Include="Process\ProcessResult.cs" />
+    <Compile Include="PropertyBuilder.cs" />
+    <Compile Include="Proration.cs" />
+    <Compile Include="Reports\CommonPostingJournal.cs" />
+    <Compile Include="Reports\Control.cs" />
+    <Compile Include="Reports\Fields\CommonPostingJournalFields.cs" />
+    <Compile Include="Reports\Fields\GLSubledgerTransactionReportFields.cs" />
+    <Compile Include="Reports\GLSubledgerTransactionReport.cs" />
+    <Compile Include="Reports\Label.cs" />
+    <Compile Include="Reports\Report.cs" />
+    <Compile Include="Reports\ReportBase.cs" />
+    <Compile Include="Revaluation\Fields\RevaluationEntryFields.cs" />
+    <Compile Include="Revaluation\Fields\RevaluationProcessFields.cs" />
+    <Compile Include="Revaluation\Fields\RevaluationHistoryFields.cs" />
+    <Compile Include="Revaluation\Fields\RevaluationOptionalFieldValueFields.cs" />
+    <Compile Include="Enums\Revaluation\RateOperator.cs" />
+    <Compile Include="Enums\Revaluation\RateOverridden.cs" />
+    <Compile Include="Revaluation\RevaluationProcess.cs" />
+    <Compile Include="Revaluation\RevaluationEntry.cs" />
+    <Compile Include="Revaluation\RevaluationHistory.cs" />
+    <Compile Include="Revaluation\RevaluationOptionalFieldValue.cs" />
+    <Compile Include="Enums\Revaluation\UpdateTarget.cs" />
+    <Compile Include="SageUnityContainer.cs" />
+    <Compile Include="SalesSplit.cs" />
+    <Compile Include="CustomSelectList.cs" />
+    <Compile Include="SelectList.cs" />
+    <Compile Include="Currency.cs" />
+    <Compile Include="Authentication\UserInfo.cs" />
+    <Compile Include="Authentication\TenantInfo.cs" />
+    <Compile Include="Authentication\UserTenantInfo.cs" />
+    <Compile Include="Customization\Control.cs" />
+    <Compile Include="Customization\Grid.cs" />
+    <Compile Include="Customization\Validators\Range.cs" />
+    <Compile Include="Customization\Validators\RegularExpression.cs" />
+    <Compile Include="Customization\Validators\Required.cs" />
+    <Compile Include="Customization\Screen.cs" />
+    <Compile Include="Customization\Screens.cs" />
+    <Compile Include="Customization\Validators\Validator.cs" />
+    <Compile Include="Customization\Validators\StringLength.cs" />
+    <Compile Include="EntityError.cs" />
+    <Compile Include="Enums\ControlType.cs" />
+    <Compile Include="Enums\DataType.cs" />
+    <Compile Include="Enums\Direction.cs" />
+    <Compile Include="Enums\ExportImport\ImportType.cs" />
+    <Compile Include="Enums\FinderType.cs" />
+    <Compile Include="Enums\ScreenName.cs" />
+    <Compile Include="EnumUtility.cs" />
+    <Compile Include="ExportImport\BusinessEntityItem.cs" />
+    <Compile Include="ExportImport\BusinessEntityItemModel.cs" />
+    <Compile Include="ExportImport\ExportResponse.cs" />
+    <Compile Include="ExportImport\ImportResponse.cs" />
+    <Compile Include="FiscalPeriod.cs" />
+    <Compile Include="ModelBase.cs" />
+    <Compile Include="OrderBy.cs" />
+    <Compile Include="Organization.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Context.cs" />
+    <Compile Include="EnumerableResponse.cs" />
+    <Compile Include="Reports\Parameter.cs" />
+    <Compile Include="Reports\GenericReport.cs" />
+    <Compile Include="Reports\Reports.cs" />
+    <Compile Include="ScreenContext.cs" />
+    <Compile Include="SessionDateWarning.cs" />
+    <Compile Include="StoredAsChar.cs" />
+    <Compile Include="TaxGroupAuthority.cs" />
+    <Compile Include="SPS\TransactionLog.cs" />
+    <Compile Include="SPS\TransactionLogFields.cs" />
+    <Compile Include="UnityInjectionType.cs" />
+    <Compile Include="UserAccess.cs" />
+    <Compile Include="UserMessage.cs" />
+    <Compile Include="Utilities\CommonUtilities.cs" />
+    <Compile Include="POVendorInformation\VendorBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sage.CA.SBS.ERP.Sage300.Common.Resources\Sage.CA.SBS.ERP.Sage300.Common.Resources.csproj">
+      <Project>{4bb55006-cf24-43b5-800c-3f9a4685be9e}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.CA.SBS.ERP.Sage300.Common.Utilities\Sage.CA.SBS.ERP.Sage300.Common.Utilities.csproj">
+      <Project>{9ce25370-dc66-4d61-87b4-aed9a3dc7bd4}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

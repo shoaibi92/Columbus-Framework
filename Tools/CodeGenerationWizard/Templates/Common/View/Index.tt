@@ -1,0 +1,29 @@
+﻿<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#
+    // Locals
+    var entityName = view.Properties[BusinessView.EntityName];
+    var moduleId = settings.ModuleId;
+    var copyright = settings.Copyright;
+#>
+@* <#=copyright#> *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new {id = "frm<#=entityName#>"}))
+{
+    <div id="antiforgerytoken_holder">
+        @Html.AntiForgeryToken()
+    </div>
+    @Html.Partial("~/Areas/<#=moduleId#>/Views/<#=entityName#>/Partials/_<#=entityName#>.cshtml")
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/<#=entityName#>")
+}
+
+@{
+    Layout = Shared.LocalizedLayoutR3;
+}

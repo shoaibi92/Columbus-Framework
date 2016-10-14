@@ -1,0 +1,7 @@
+﻿{
+    "Framework": "qunit",
+
+    "FrameworkVersion": "",
+
+    "CodeCoverageExcludes": ["*\\jquery*.js", "*\\Test*.js"]
+}

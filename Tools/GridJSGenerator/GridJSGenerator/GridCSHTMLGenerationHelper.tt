@@ -1,0 +1,10 @@
+﻿<script>
+    var %%NameSpace%%Header = {
+		%%Columns%%
+     };
+</script>
+
+<div class="datagrid-group">
+  @Html.KoKendoGrid("%%GridId%%", "%%JSViewModel%%", <<Key Goes here>>, "%%GridId%%Config", true)
+</div>
+

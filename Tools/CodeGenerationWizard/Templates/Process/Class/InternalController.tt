@@ -1,0 +1,53 @@
+﻿<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#
+   // Locals
+    var moduleId = settings.ModuleId;
+    var copyright = settings.Copyright;
+    var companyNamespace = settings.CompanyNamespace;
+    var modelName = view.Properties[BusinessView.ModelName];
+    var entityName = view.Properties[BusinessView.EntityName];
+
+    var webModuleNamespace = settings.DoesAreasExist ? "Web.Areas." + moduleId : moduleId + ".Web";
+#>
+// <#=copyright#>
+
+#region Namespace
+
+using <#=companyNamespace#>.<#=moduleId#>.Interfaces.Services.Process;
+using <#=companyNamespace#>.<#=moduleId#>.Models.Process;
+using <#=companyNamespace#>.<#=moduleId#>.Models.Enums.Process;
+using <#=companyNamespace#>.<#=moduleId#>.Resources.Process;
+using <#=companyNamespace#>.<#=webModuleNamespace#>.Models.Process;
+using Sage.CA.SBS.ERP.Sage300.Common.Models;
+using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.Process;
+
+#endregion
+
+namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers.Process
+{
+    /// <summary>
+    /// <#=entityName#> Internal Controller
+    /// </summary>
+    /// <typeparam name="T">Where T is type of <see cref="<#=modelName#>"/></typeparam>
+    public class <#=entityName#>ControllerInternal<T> :
+        ProcessControllerInternal<T, <#=entityName#>ViewModel<T> , I<#=entityName#>Service<T>>
+        where T : <#=modelName#>, new()
+    {
+        #region Constructor
+
+        /// /// <summary>
+        /// Constructor for <#=entityName#>
+        /// /// </summary>
+        /// <param name="context">Context</param>
+        public <#=entityName#>ControllerInternal(Context context)
+            : base(context)
+        {
+        }
+
+        #endregion
+
+    }
+}

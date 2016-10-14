@@ -1,0 +1,187 @@
+﻿@using System.Web.Mvc.Html
+@model Sage.CNA.AzureInfo.Models.CloudServiceMetadataModel
+
+@{
+    ViewBag.Title = "Sage";
+}
+
+@if (Model.IsSuccssful)
+{
+    if (Model.CloudServiceList.Count > 0)
+    {
+        <table class="table" style="border-collapse:collapse">
+            <tr>
+                <th colspan="7"><h3>R1 Environments</h3></th>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CloudServiceList[0].Name)
+
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CloudServiceList[0].DeploymentType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CloudServiceList[0].Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CloudServiceList[0].Url) / Build Number
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CloudServiceList[0].ConsolidatedRoleStatus)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CloudServiceList[0].CreatedDate)
+                </th>
+            </tr>
+
+            @foreach (var item in Model.CloudServiceList)
+            {
+                <tr class="@item.HighlightCssClass">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DeploymentType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        <a target="_blank" href="@Html.DisplayFor(modelItem => item.Url)">@Html.DisplayFor(modelItem => item.Url)</a><br />
+                        @Html.DisplayFor(modelItem => item.DeploymentLabel)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ConsolidatedRoleStatus)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedDate)
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+    if (Model.R2CloudServiceList.Count > 0)
+    {
+        <table class="table" style="border-collapse:collapse">
+            <tr>
+                <th colspan="7"><h3>R2 Environments</h3></th>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.R2CloudServiceList[0].Name)
+
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.R2CloudServiceList[0].DeploymentType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.R2CloudServiceList[0].Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.R2CloudServiceList[0].Url) / Build Number
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.R2CloudServiceList[0].ConsolidatedRoleStatus)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.R2CloudServiceList[0].CreatedDate)
+                </th>
+            </tr>
+
+            @foreach (var item in Model.R2CloudServiceList)
+            {
+                <tr class="@item.HighlightCssClass">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DeploymentType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        <a target="_blank" href="@Html.DisplayFor(modelItem => item.Url)">@Html.DisplayFor(modelItem => item.Url)</a><br />
+                        @Html.DisplayFor(modelItem => item.DeploymentLabel)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ConsolidatedRoleStatus)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedDate)
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+    if (Model.R3CloudServiceList.Count > 0)
+    {
+        <table class="table" style="border-collapse:collapse">
+            <tr>
+                <th colspan="7"><h3>R3 Environments</h3></th>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.R3CloudServiceList[0].Name)
+
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.R3CloudServiceList[0].DeploymentType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.R3CloudServiceList[0].Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.R3CloudServiceList[0].Url) / Build Number
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.R3CloudServiceList[0].ConsolidatedRoleStatus)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.R3CloudServiceList[0].CreatedDate)
+                </th>
+            </tr>
+
+            @foreach (var item in Model.R3CloudServiceList)
+            {
+                <tr class="@item.HighlightCssClass">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DeploymentType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        <a target="_blank" href="@Html.DisplayFor(modelItem => item.Url)">@Html.DisplayFor(modelItem => item.Url)</a><br />
+                        @Html.DisplayFor(modelItem => item.DeploymentLabel)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ConsolidatedRoleStatus)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedDate)
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <h2>There are no cloud services to list</h2>
+    }
+}
+else
+{
+    <h2>Server Error</h2>
+    <h3>@Model.ErrorMessage</h3>
+}
+
+
+

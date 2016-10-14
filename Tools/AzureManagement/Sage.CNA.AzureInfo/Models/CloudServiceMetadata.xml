@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CloudServices>
+  <CloudService>
+    <Name>columbus20nadev_production</Name>
+    <CNameUrl>https://columbus20nadev.sagedatacloud.com</CNameUrl>
+    <Description>R1 QA Team - Daily Builds</Description>
+  </CloudService>
+  <CloudService >
+    <Name>columbus20nadev_staging</Name>
+    <Description>R1 QA Team - Daily Builds</Description>
+  </CloudService>
+  <CloudService>
+    <Name>columbus20naqa_production</Name>
+    <CNameUrl>https://columbus20naqa.sagedatacloud.com</CNameUrl>
+    <Description>R1 Automation Team</Description>
+  </CloudService>
+  <CloudService>
+    <Name>columbus20naqa_staging</Name>
+    <Description>R1 Automation Team</Description>
+  </CloudService>
+  <CloudService>
+    <Name>columbus20nastaging_production</Name>
+    <CNameUrl>https://columbus20nastaging.sagedatacloud.com</CNameUrl>
+    <Description>R1 UAT Team - Weekly Builds</Description>
+  </CloudService>
+  <CloudService>
+    <Name>columbus20nastaging_staging</Name>
+    <Description>R1 UAT Team - Weekly Builds</Description>
+  </CloudService>
+  <CloudService>
+    <Name>columbus20nadevr2_production</Name>
+    <CNameUrl>https://columbus20nadevr2.sagedatacloud.com</CNameUrl>
+    <Description>R2 QA Team - Daily Builds</Description>
+  </CloudService>
+  <CloudService>
+    <Name>columbus20nadevr2_staging</Name>
+    <Description>R2 QA Team - Daily Builds</Description>
+  </CloudService>
+  <CloudService>
+    <Name>columbus20naqar2_production</Name>
+    <CNameUrl>https://columbus20naqar2.sagedatacloud.com</CNameUrl>
+    <Description>R2 Automation Team</Description>
+  </CloudService>
+  <CloudService>
+    <Name>columbus20naqar2_staging</Name>
+    <Description>R2 Automation Team</Description>
+  </CloudService>
+  <CloudService>
+    <Name>columbus20nastagingr2_production</Name>
+    <CNameUrl>https://columbus20nastagingr2.sagedatacloud.com</CNameUrl>
+    <Description>R2 UAT Team - Weekly Builds</Description>
+  </CloudService>
+  <CloudService>
+    <Name>columbus20nastagingr2_staging</Name>
+    <Description>R2 UAT Team - Weekly Builds</Description>
+  </CloudService>
+  <CloudService>
+    <Name>columbus20nar2_production</Name>
+    <CNameUrl>https://columbus20nar2.sagedatacloud.com</CNameUrl>
+    <Description>R2 UAT Team - Weekly Builds</Description>
+  </CloudService>
+  <CloudService>
+    <Name>columbus20nadevr3_production</Name>
+    <CNameUrl>https://columbus20nadevr3.sagedatacloud.com</CNameUrl>
+    <Description>R3 QA Team - Daily Builds</Description>
+  </CloudService>
+  <CloudService>
+    <Name>columbus20nadevr3_staging</Name>
+    <Description>R3 QA Team - Daily Builds</Description>
+  </CloudService>
+  <CloudService>
+    <Name>columbus20naqar3_production</Name>
+    <CNameUrl>https://columbus20naqar3.sagedatacloud.com</CNameUrl>
+    <Description>R3 Automation Team</Description>
+  </CloudService>
+  <CloudService>
+    <Name>columbus20naqar3_staging</Name>
+    <Description>R3 Automation Team</Description>
+  </CloudService>
+  <CloudService>
+    <Name>columbus20nastagingr3_production</Name>
+    <CNameUrl>https://columbus20nastagingr3.sagedatacloud.com</CNameUrl>
+    <Description>R3 UAT Team - Weekly Builds</Description>
+  </CloudService>
+  <CloudService>
+    <Name>columbus20nastagingr3_staging</Name>
+    <Description>R3 UAT Team - Weekly Builds</Description>
+  </CloudService>
+</CloudServices>
