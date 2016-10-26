@@ -72,25 +72,28 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ACCPAC.Advantage, Version=6.2.0.0, Culture=neutral, PublicKeyToken=4d7048ecf2312a7c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\LinkedSource\lib\ACCPAC.Advantage.dll</HintPath>
-    </Reference>
-    <Reference Include="ACCPAC.Advantage.Types, Version=6.2.0.0, Culture=neutral, PublicKeyToken=4d7048ecf2312a7c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\LinkedSource\lib\ACCPAC.Advantage.Types.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
-      <HintPath>..\..\..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Unity.Interception.4.0.1\lib\Net45\Microsoft.Practices.Unity.Interception.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Unity.Interception.4.0.1\lib\Net45\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Unity.Mvc.4.0.1\lib\net45\Microsoft.Practices.Unity.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -100,6 +103,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
@@ -125,107 +129,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Audit\IDatabaseAudit.cs" />
-    <Compile Include="Audit\IDatabaseAuditRepository.cs" />
-    <Compile Include="Bootstrap\BootstrapTaskManager.cs" />
-    <Compile Include="Bootstrap\ExportMetadata.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Bootstrap\IBootstrapperTask.cs" />
-    <Compile Include="Controller\IExportImportController.cs" />
-    <Compile Include="Entity\IBusinessEntity.cs" />
-    <Compile Include="Entity\IBusinessEntitySession.cs" />
-    <Compile Include="Audit\ISession.cs" />
-    <Compile Include="Audit\ISessionRepository.cs" />
-    <Compile Include="Entity\IViewEntity.cs" />
-    <Compile Include="GLIntegration\BusinessRepository\IBaseGLReferenceIntegrationEntity.cs" />
-    <Compile Include="GLIntegration\Service\IBaseGLReferenceIntegrationService.cs" />
-    <Compile Include="Landlord\ILandlordRepository.cs" />
-    <Compile Include="Login\ILogin.cs" />
-    <Compile Include="Process\IProcessService.cs" />
-    <Compile Include="Repository\Base\ICommonRepository.cs" />
-    <Compile Include="Repository\Base\IOrderedHeaderDetailRepository.cs" />
-    <Compile Include="Repository\Base\ISequencedHeaderDetailRepository.cs" />
-    <Compile Include="Repository\Base\Statefull\IOrderedHeaderDetailRepository.cs" />
-    <Compile Include="Repository\Base\Statefull\ISequencedHeaderDetailFiveRepository.cs" />
-    <Compile Include="Repository\Email\IEmailRepository.cs" />
-    <Compile Include="Repository\IBaseInvoiceEntryEntity.cs" />
-    <Compile Include="Repository\IRepository.cs" />
-    <Compile Include="Repository\IViewResourceRepository.cs" />
-    <Compile Include="Revaluation\BusinessRepository\IBaseRevaluationEntity.cs" />
-    <Compile Include="Repository\IBatchHeaderDetailRepository.cs" />
-    <Compile Include="Repository\IBillToLocationEntity.cs" />
-    <Compile Include="Repository\IDynamicQueryRepository.cs" />
-    <Compile Include="Repository\IExportImportRepository.cs" />
-    <Compile Include="Repository\IInquiryRepository.cs" />
-    <Compile Include="Repository\IPOOEBaseInvoiceEntryRepository.cs" />
-    <Compile Include="Repository\IProcessingRepository.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Repository\ISecurity.cs" />
-    <Compile Include="Repository\Base\Statefull\ISequencedHeaderDetailRepository.cs" />
-    <Compile Include="Repository\ISequencedHeaderDetailThreeRepository.cs" />
-    <Compile Include="Repository\Menu\IMenuModuleHelper.cs" />
-    <Compile Include="Repository\Menu\IMenuModuleHelperManager.cs" />
-    <Compile Include="Repository\Menu\IMenuRepository.cs" />
-    <Compile Include="Repository\Portal\IHelpEntity.cs" />
-    <Compile Include="Repository\Portal\IMenuSecurityEntity.cs" />
-    <Compile Include="Repository\Portal\INavigationEntity.cs" />
-    <Compile Include="Repository\Reports\IGenericReportRepository.cs" />
-    <Compile Include="Repository\Reports\IReportRepository.cs" />
-    <Compile Include="Repository\IBusinessRepository.cs" />
-    <Compile Include="Revaluation\BusinessRepository\IBaseRevaluationHistoryEntity.cs" />
-    <Compile Include="Revaluation\BusinessRepository\IBaseRevaluationProcessEntity.cs" />
-    <Compile Include="Revaluation\Service\IBaseRevaluationHistoryService.cs" />
-    <Compile Include="Revaluation\Service\IBaseRevaluationProcessService.cs" />
-    <Compile Include="Revaluation\Service\IBaseRevaluationService.cs" />
-    <Compile Include="Service\Base\ICommonService.cs" />
-    <Compile Include="Service\Base\ISequencedHeaderDetailService.cs" />
-    <Compile Include="Service\Base\Statefull\ISequencedHeaderDetailFiveService.cs" />
-    <Compile Include="Service\Email\IEmailService.cs" />
-    <Compile Include="Service\IBaseInvoiceEntryService.cs" />
-    <Compile Include="Service\Base\IOrderedHeaderDetailService.cs" />
-    <Compile Include="Service\IBatchHeaderDetailService.cs" />
-    <Compile Include="Service\IBillToLocationService.cs" />
-    <Compile Include="Service\IEntityService.cs" />
-    <Compile Include="Repository\IFinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\Base\Statefull\IOrderedHeaderDetailService.cs" />
-    <Compile Include="Service\IDynamicQueryEntityService.cs" />
-    <Compile Include="Service\IInquiryService.cs" />
-    <Compile Include="Service\IPOOEBaseInvoiceEntryService.cs" />
-    <Compile Include="Service\ISecurityService.cs" />
-    <Compile Include="Service\Base\Statefull\ISequencedHeaderDetailService.cs" />
-    <Compile Include="Service\ISequencedHeaderDetailThreeService.cs" />
-    <Compile Include="Service\IViewResourceService.cs" />
-    <Compile Include="Service\Landlord\ILandlordService.cs" />
-    <Compile Include="Service\Menu\IMenuService.cs" />
-    <Compile Include="Service\Portal\IHelpService.cs" />
-    <Compile Include="Service\Portal\IMenuSecurityService.cs" />
-    <Compile Include="Service\Portal\INavigationService.cs" />
-    <Compile Include="Service\Reports\IGenericReportService.cs" />
-    <Compile Include="Service\Reports\IReportService.cs" />
-    <Compile Include="Utilities\IPool.cs" />
-    <Compile Include="Web\ISessionCacheProvider.cs" />
-    <Compile Include="Web\IUnityRegistration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Core\Sage.CA.SBS.ERP.Sage300.Core.Interfaces\Sage.CA.SBS.ERP.Sage300.Core.Interfaces.csproj">
-      <Project>{798573ff-cf70-471e-91bf-ae86b3f097f5}</Project>
-      <Name>Sage.CA.SBS.ERP.Sage300.Core.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Workflow\Sage.CA.SBS.ERP.Sage300.Workflow.Models\Sage.CA.SBS.ERP.Sage300.Workflow.Models.csproj">
-      <Project>{B667C745-7C42-4C7C-87AA-BF8C405C6242}</Project>
-      <Name>Sage.CA.SBS.ERP.Sage300.Workflow.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sage.CA.SBS.ERP.Sage300.Common.Models\Sage.CA.SBS.ERP.Sage300.Common.Models.csproj">
-      <Project>{74ba53c3-eb09-4226-9985-bad7306db937}</Project>
-      <Name>Sage.CA.SBS.ERP.Sage300.Common.Models</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

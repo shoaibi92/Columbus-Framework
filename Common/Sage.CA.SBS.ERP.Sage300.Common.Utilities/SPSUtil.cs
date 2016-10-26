@@ -4,7 +4,6 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Net.Http;
 using System.Web;
-using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 
 namespace Sage.CA.SBS.ERP.Sage300.Common.Utilities
 {
