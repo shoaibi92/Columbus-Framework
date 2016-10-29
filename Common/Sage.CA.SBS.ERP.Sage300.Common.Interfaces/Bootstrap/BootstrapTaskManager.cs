@@ -1,29 +1,28 @@
-﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 using Microsoft.Practices.Unity;
-using Sage.CA.SBS.ERP.Sage300.Common.Models;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Xml;
+using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Bootstrap;
 
 namespace Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Bootstrap
 {
-    /// <summary>
-    /// Bootstapper tasks manager for executiing bootstrap tasks
-    /// </summary>
-    public static class BootstrapTaskManager
+    public class BootstrapTaskManager
     {
+
         /// <summary>
         /// All bootstrap tasks composed.
         /// </summary>
         [ImportMany]
         public static IEnumerable<Lazy<IBootstrapperTask, IBootstrapMetadata>> BootstrapTasks { get; set; }
+
 
         /// <summary>
         /// Unity container
@@ -121,32 +120,18 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Bootstrap
         }
 
         /// <summary>
-        /// Register plug in component types
-        /// </summary>
-        /// <param name="path"></param>
-        public static void RegisterTypes(string path)
-        {
-            var patterns = GetSearchPattern(path, false);
-            SetupWorker(Path.Combine(path, "bin"), patterns.ToArray());
-        }
-
-        /// <summary>
         /// Get bootstrapper search files patterns
         /// </summary>
         /// <returns></returns>
-        public static List<string> GetSearchPattern(string dir, bool includeSage = true)
+        public static List<string> GetSearchPattern(string bootStrapperFile)
         {
-            const string sageDllPattern = "Sage.CA.SBS.ERP.Sage300*.dll";
+
             const string path = "/bootstrapper/assemblies/add[@assembly]";
-            const string searhPattern = "*bootstrapper.xml";
+            var patterns = new List<string>() { "*.dll" };
 
-            string[] files = Directory.GetFiles(dir, searhPattern);
-
-            var patterns = (includeSage) ? new List<string>() { sageDllPattern } : new List<string>();
-            var doc = new XmlDocument();
-
-            foreach (var bootStrapperFile in files)
+            if (File.Exists(bootStrapperFile))
             {
+                var doc = new XmlDocument();
                 try
                 {
                     doc.Load(bootStrapperFile);
@@ -172,6 +157,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Bootstrap
                 {
                 }
             }
+
             return patterns;
         }
 
@@ -181,8 +167,9 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Bootstrap
         /// <returns>Unity Container</returns>
         private static IUnityContainer ConfigureContainer()
         {
-            var container = new SageUnityContainer();
+            var container = new UnityContainer();
             return container;
         }
+
     }
 }

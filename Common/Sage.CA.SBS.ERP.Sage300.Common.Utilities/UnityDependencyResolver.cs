@@ -7,7 +7,8 @@ using System.Web.Mvc;
 using Microsoft.Practices.Unity;
 
 
-namespace Sage.CA.SBS.ERP.Sage300.Common.Web
+
+namespace Sage.CA.SBS.ERP.Sage300.Common.Utilities
 {
     /// <summary>
     /// Class for Unity Dependency Resolver methods

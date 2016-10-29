@@ -131,11 +131,16 @@
   <ItemGroup>
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="Bootstrap\BootstrapTaskManager.cs" />
+    <Compile Include="Bootstrap\ExportMetadata.cs" />
     <Compile Include="Bootstrap\IBootstrapperTask.cs" />
+    <Compile Include="Bootstrap\SageUnityContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
