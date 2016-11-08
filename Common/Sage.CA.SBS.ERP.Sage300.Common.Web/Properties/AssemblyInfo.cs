@@ -9,12 +9,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 
-[assembly: AssemblyTitle("Sage.CA.SBS.ERP.Sage300.Common.Web")]
+[assembly: AssemblyTitle("NND.CA.Common.Web")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Sage Software, Inc.")]
-[assembly: AssemblyProduct("Sage.CA.SBS.ERP.Sage300.Common.Web")]
-[assembly: AssemblyCopyright("Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved.")]
+[assembly: AssemblyCompany("KDRSoftware, Inc.")]
+[assembly: AssemblyProduct("NND.CA.Common.Web")]
+[assembly: AssemblyCopyright("Copyright (c) 2016 KDRSoftware, Inc.  All rights reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
