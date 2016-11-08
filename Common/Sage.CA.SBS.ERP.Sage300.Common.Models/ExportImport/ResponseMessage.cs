@@ -3,7 +3,7 @@
 #region
 
 using System.Text;
-using Sage.CA.SBS.ERP.Sage300.Common.Resources;
+
 
 #endregion
 
@@ -47,9 +47,9 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Models.ExportImport
         /// Text, which will be displayed to USER as a status message
         /// </summary>
         /// <value>The response text.</value>
-        public string ResponseText
-        {
-            get { return string.Format(CommonResx.ImportResponse, BusinessEntity, Updated, Inserted, Processed); }
-        }
+        //public string ResponseText
+        //{
+        //    get { return string.Format(CommonResx.ImportResponse, BusinessEntity, Updated, Inserted, Processed); }
+        //}
     }
 }
