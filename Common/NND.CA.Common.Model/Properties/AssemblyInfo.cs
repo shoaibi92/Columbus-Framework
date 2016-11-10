@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 
 [assembly: AssemblyTitle("NND.CA.Common.Model")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("NND.CA.Common.Model")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("KDRSoftware, Inc.")]
 [assembly: AssemblyProduct("NND.CA.Common.Model")]

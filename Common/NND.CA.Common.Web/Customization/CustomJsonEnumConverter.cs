@@ -2,10 +2,10 @@
 
 using System;
 using Newtonsoft.Json;
-using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Newtonsoft.Json.Converters;
+using NND.CA.Common.Model;
 
-namespace Sage.CA.SBS.ERP.Sage300.Common.Web.Customization
+namespace NND.CA.Common.Web.Customization
 {
     /// <summary>
     /// Custom String Enum Converter, this converter will be used when we serialize the data from server to client.
