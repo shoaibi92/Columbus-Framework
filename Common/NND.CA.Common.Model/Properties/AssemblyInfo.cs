@@ -9,11 +9,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 
-[assembly: AssemblyTitle("NND.CA.Common.Web")]
+[assembly: AssemblyTitle("NND.CA.Common.Model")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("KDRSoftware, Inc.")]
-[assembly: AssemblyProduct("NND.CA.Common.Web")]
+[assembly: AssemblyProduct("NND.CA.Common.Model")]
 [assembly: AssemblyCopyright("Copyright (c) 2016 KDRSoftware, Inc.  All rights reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
