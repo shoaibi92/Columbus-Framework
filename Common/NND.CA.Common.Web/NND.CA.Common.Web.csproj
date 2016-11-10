@@ -157,6 +157,7 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AreaContants\Shared.cs" />
   </ItemGroup>
