@@ -96,17 +96,7 @@
       <HintPath>..\..\LinkedSource\lib\Authentication\CEDataServiceContract.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Practices.Unity.Configuration">
-      <HintPath>..\..\..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
-      <HintPath>..\..\..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
-    </Reference>
+   
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
@@ -118,28 +108,16 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Assemblies\NND.CA.DV.Models.dll</HintPath>
     </Reference>
-    <Reference Include="SageNA.CE.CEDataServiceClient, Version=1.0.5065.16896, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\LinkedSource\lib\Authentication\SageNA.CE.CEDataServiceClient.dll</HintPath>
-    </Reference>
-    <Reference Include="SageNA.CE.Common.URLEncryption, Version=1.0.5065.16895, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\LinkedSource\lib\Authentication\SageNA.CE.Common.URLEncryption.dll</HintPath>
-    </Reference>
-    <Reference Include="SageNA.CE.UM.Client, Version=1.0.5065.16897, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\LinkedSource\lib\Authentication\SageNA.CE.UM.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="SageNA.CE.UMClientInterface, Version=1.0.5065.16896, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\LinkedSource\lib\Authentication\SageNA.CE.UMClientInterface.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+	    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
@@ -168,6 +146,7 @@
     <Compile Include="Customization\Screen.cs" />
     <Compile Include="Customization\ValidationProvider.cs" />
     <Compile Include="ExportImport\BaseExportImportControllerInternal.cs" />
+    <Compile Include="InternalControllerBase.cs" />
     <Compile Include="MultitenantControllerBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AreaContants\Shared.cs" />
@@ -184,10 +163,6 @@
     <ProjectReference Include="..\NND.CA.Common.Utilities\NND.CA.Common.Utilities.csproj">
       <Project>{10ce1d48-d780-4282-ab43-a9ceedf19c82}</Project>
       <Name>NND.CA.Common.Utilities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sage.CA.SBS.ERP.Sage300.Common.Utilities\Sage.CA.SBS.ERP.Sage300.Common.Utilities.csproj">
-      <Project>{9ce25370-dc66-4d61-87b4-aed9a3dc7bd4}</Project>
-      <Name>Sage.CA.SBS.ERP.Sage300.Common.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

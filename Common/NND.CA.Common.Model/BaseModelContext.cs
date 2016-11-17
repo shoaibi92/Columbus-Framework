@@ -1,18 +1,17 @@
 ﻿using System;
 using Microsoft.Practices.Unity;
-//using NND.CA.Common.Utilities;
 
 
 namespace NND.CA.Common.Model
 {
-    public class Context
+    public class BaseModelContext
     {
         #region Constructor
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public Context()
+        public BaseModelContext()
         {
             // Default(s)
             //SessionDate = DateUtil.GetNowDate();

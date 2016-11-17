@@ -118,22 +118,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Assemblies\NND.CA.DV.Models.dll</HintPath>
     </Reference>
-    <Reference Include="SageNA.CE.CEDataServiceClient, Version=1.0.5065.16896, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\LinkedSource\lib\Authentication\SageNA.CE.CEDataServiceClient.dll</HintPath>
-    </Reference>
-    <Reference Include="SageNA.CE.Common.URLEncryption, Version=1.0.5065.16895, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\LinkedSource\lib\Authentication\SageNA.CE.Common.URLEncryption.dll</HintPath>
-    </Reference>
-    <Reference Include="SageNA.CE.UM.Client, Version=1.0.5065.16897, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\LinkedSource\lib\Authentication\SageNA.CE.UM.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="SageNA.CE.UMClientInterface, Version=1.0.5065.16896, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\LinkedSource\lib\Authentication\SageNA.CE.UMClientInterface.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
