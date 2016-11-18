@@ -1,4 +1,5 @@
-﻿using NND.CA.Common.Model;
+﻿using Microsoft.Practices.Unity;
+using NND.CA.Common.Model;
 
 using NND.CA.DV.Services;
     namespace NND.CA.Common.Web.ServicesCommon
@@ -12,7 +13,7 @@ using NND.CA.DV.Services;
         ///     Constructor
         /// </summary>
         /// <param name="baseModelContext"></param>
-        protected BaseClassService(BaseModelContext baseModelContext)
+        protected BaseClassService(IUnityContainer baseModelContext)
         {
             BaseModelContextInBaseClassAtFlasService = baseModelContext;
         }
@@ -32,7 +33,7 @@ using NND.CA.DV.Services;
         ///     Gets or sets Context
         /// </summary>
         /// <value>The context.</value>
-        protected BaseModelContext BaseModelContextInBaseClassAtFlasService { get; private set; }
+        protected IUnityContainer BaseModelContextInBaseClassAtFlasService { get; private set; }
 
         #endregion
         

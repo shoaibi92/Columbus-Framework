@@ -2,6 +2,7 @@
 using System.Web.UI.WebControls;
 using Microsoft.Practices.Unity;
 using NND.CA.Common.Model;
+using NND.CA.Common.Web.ServicesCommon;
 
 namespace NND.CA.Common.Web
 {
@@ -11,7 +12,7 @@ namespace NND.CA.Common.Web
 
         //protected  T ServicesInLayer;
         protected  BaseModelContext BaseModelContainer;
-        protected  T ServicesInternalController;
+        protected T ServicesInternalController;
 
         #endregion
 
