@@ -1,4 +1,7 @@
-﻿using NND.CA.Common.Model;
+﻿using System.Runtime.Remoting.Contexts;
+using System.Web.UI.WebControls;
+using Microsoft.Practices.Unity;
+using NND.CA.Common.Model;
 
 namespace NND.CA.Common.Web
 {
@@ -6,25 +9,24 @@ namespace NND.CA.Common.Web
     {
         #region private memebrs
 
-        protected static T ServicesInLayer;
+        //protected  T ServicesInLayer;
+        protected  BaseModelContext BaseModelContainer;
+        protected  T ServicesInternalController;
 
         #endregion
 
         #region  Constructor
 
-        public InternalControllerBase(BaseModelContext baseModelContainer)
+        public InternalControllerBase(IUnityContainer baseModelContainer)
         {
-            //ServicesInLayer = baseModelContainer.Container.Resolve<T>();
+           
         }
 
         #endregion
 
         #region PublicMemebers
 
-        public T ResolveService()
-        {
-            return ServicesInLayer;
-        }
+
 
         #endregion
     }

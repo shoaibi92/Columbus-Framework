@@ -1,4 +1,5 @@
 ﻿using System.Web;
+using System.Web.Routing;
 using Microsoft.Practices.Unity;
 using NND.CA.Common.Model;
 
@@ -6,6 +7,37 @@ namespace NND.CA.Common.Web
 {
     public class MultitenantControllerBase<TViewModel> : BaseController<TViewModel> where TViewModel : new()
     {
+        #region Private Members
+
+        /// <summary>
+        ///     local member Microsoft IUnityContainer
+        /// </summary>
+        public IUnityContainer UnityContainerMultiTenantClass;
+
+        #endregion
+
+        #region InitializerClass
+
+        protected override void Initialize(RequestContext requestContext)
+        {
+            base.Initialize(requestContext);
+            HttpSession = Session;
+            baseModelContext = new BaseModelContext
+            {
+                ApplicationType = ApplicationType.WebApplication,
+                WebSitePath = System.Web.HttpContext.Current.Server.MapPath("~")
+            };
+            requestContext.HttpContext.Items["BaseModelContext"] = baseModelContext;
+            // Set the Context from session.
+            //SetContext();
+            //SetScreenControls(ScreenFormName);
+            //SetUserLanguage();
+            //Used in HTML Helpers
+            requestContext.HttpContext.Items["ScreenName"] = ScreenFormName;
+        }
+
+        #endregion
+
         #region Constructors
 
         ///// <summary>
@@ -26,16 +58,20 @@ namespace NND.CA.Common.Web
         //    : this(container, ScreenName.None)
         //{
         //}
-
+        /// <summary>
+        ///     Context
+        /// </summary>
+        /// <value>The context.</value>
+        protected BaseModelContext BaseModelContextPropery { get; set; }
 
         /// <summary>
-        ///     Setting IUnity Container
+        ///     Main Constructor setting MS Unitt
         /// </summary>
-        /// <param name="container">IUnity Container</param>
+        /// <param name="container">IUnityContainer Container</param>
         /// <param name="screenNameString">Screen Name</param>
         protected MultitenantControllerBase(IUnityContainer container, string screenNameString)
         {
-            Container = container;
+            UnityContainerMultiTenantClass = container;
             ScreenFormName = screenNameString;
         }
 
@@ -53,7 +89,7 @@ namespace NND.CA.Common.Web
         ///     ScreenName
         /// </summary>
         /// <value>The name of the screen.</value>
-        protected string ScreenFormName { get; private set; }
+        protected string ScreenFormName { get; }
 
         /// <summary>
         ///     View Model
@@ -86,30 +122,6 @@ namespace NND.CA.Common.Web
         /// </summary>
         private TViewModel _viewModel = new TViewModel();
 
-        /// <summary>
-        ///     The container
-        /// </summary>
-        public IUnityContainer Container;
-
         #endregion
-
-        ///// <summary>
-        ///// Setting HTTPContext and  HTTPSession
-        ///// </summary>
-        ///// <param name="session">HTTP Session</param>
-        ///// <param name="context">HTTP Context</param>
-        //public MultitenantControllerBase(HttpSessionStateBase session, HttpContextBase context)
-        //    : this(null, ScreenName.None)
-        //{
-        //    HTTPContext = context;
-        //    HttpSession = session;
-        //}
-        //#endregion
-
-        //public static JsonNetResult JsonNet<T>(T viewmodel)
-        //{
-        //    var testObject = new JsonNetResult();
-        //    return testObject;
-        //}
     }
 }
