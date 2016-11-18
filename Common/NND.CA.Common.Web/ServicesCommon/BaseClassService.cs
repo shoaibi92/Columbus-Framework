@@ -35,7 +35,10 @@ using NND.CA.DV.Services;
         /// <value>The context.</value>
         protected IUnityContainer BaseModelContextInBaseClassAtFlasService { get; private set; }
 
+
+        public BaseModelContext BaseModelContextFromController { get; set; }
+
         #endregion
-        
+
     }
 }
