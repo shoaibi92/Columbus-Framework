@@ -1,8 +1,6 @@
 ﻿using Microsoft.Practices.Unity;
 using NND.CA.Common.Model;
-
-using NND.CA.DV.Services;
-    namespace NND.CA.Common.Web.ServicesCommon
+namespace NND.CA.Common.Web.ServicesCommon
 {
     public abstract class BaseClassService<T>
     {
