@@ -135,6 +135,7 @@
     <Compile Include="Bootstrap\ExportMetadata.cs" />
     <Compile Include="Bootstrap\IBootstrapperTask.cs" />
     <Compile Include="Bootstrap\SageUnityContainer.cs" />
+    <Compile Include="DataAccess\IWorkflowContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\IEntityService.cs" />
   </ItemGroup>
@@ -150,6 +151,14 @@
     <ProjectReference Include="..\..\..\Columbus-DV\NND.CA.DV.Models\NND.CA.DV.Models.csproj">
       <Project>{c8e1eca7-e38a-48f4-9b3b-2707963f1bb1}</Project>
       <Name>NND.CA.DV.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NND.CA.Common.Model\NND.CA.Common.Model.csproj">
+      <Project>{75A4BA46-805B-4BF3-AE8C-E0FAC47FD517}</Project>
+      <Name>NND.CA.Common.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NND.CA.Common.Web\NND.CA.Common.Web.csproj">
+      <Project>{7E1A2F26-8E5C-4E72-890C-6D72E535DB7E}</Project>
+      <Name>NND.CA.Common.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
