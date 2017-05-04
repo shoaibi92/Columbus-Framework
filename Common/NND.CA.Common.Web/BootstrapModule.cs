@@ -67,6 +67,13 @@ namespace NND.CA.Common.Web
             /// Project and Job Costing
             /// </summary>
             public const string DV = "DV";
-        }
+
+            /// <summary>
+            /// Project and Job Costing
+            /// </summary>
+            public const string WebApi = "WebApi";
+
+
     }
+}
 
