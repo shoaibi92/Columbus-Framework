@@ -661,6 +661,7 @@
     <Compile Include="DbContxt\XMLTRX.cs" />
     <Compile Include="EntityError.cs" />
     <Compile Include="EnumItem.cs" />
+    <Compile Include="Enums\BussinessRepoStatusType.cs" />
     <Compile Include="Enums\SecurityType.cs" />
     <Compile Include="Enums\WorkStatusType.cs" />
     <Compile Include="EnumUtility.cs" />

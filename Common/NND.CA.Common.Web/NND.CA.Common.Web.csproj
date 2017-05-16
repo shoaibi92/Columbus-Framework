@@ -151,6 +151,7 @@
     <Compile Include="Customization\Grid.cs" />
     <Compile Include="Customization\Screen.cs" />
     <Compile Include="Customization\ValidationProvider.cs" />
+    <Compile Include="DBAccess\ShrekDbContext.cs" />
     <Compile Include="DBAccess\TestDbContext.cs" />
     <Compile Include="ExportImport\BaseExportImportControllerInternal.cs" />
     <Compile Include="InternalControllerBase.cs" />
@@ -169,6 +170,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Columbus-NNDWebApi\NNDWebApi.Models\NND.WebApi.Models.csproj">
+      <Project>{13EE9DBF-006A-4A2F-8D7E-85B0BB22493B}</Project>
+      <Name>NND.WebApi.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NND.CA.Common.Model\NND.CA.Common.Model.csproj">
       <Project>{75a4ba46-805b-4bf3-ae8c-e0fac47fd517}</Project>
       <Name>NND.CA.Common.Model</Name>
