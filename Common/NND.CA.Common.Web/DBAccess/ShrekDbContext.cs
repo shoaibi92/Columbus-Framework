@@ -13,6 +13,14 @@ namespace NND.CA.Common.Web.DBAccess
            // Database.SetInitializer<ShrekDbContext>(null);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public DbSet<UnbonceWebApiDataModel> UnbonceWebApiDataModels { get; set; }
+
+        /// <summary>
+        /// LiveChatWebApiDataModel table in the Sherk DataBase
+        /// </summary>
+        public DbSet<LiveChatWebApiDataModel> LiveChatWebApiDataModels { get; set; }
     }
 }
