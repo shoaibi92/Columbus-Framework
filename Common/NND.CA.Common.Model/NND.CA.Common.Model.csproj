@@ -691,6 +691,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseModels\NND.CA.WebApi\IncomingDataModelsFromThirdPartyBaseModel.cs" />
     <Content Include="DbContxt\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
