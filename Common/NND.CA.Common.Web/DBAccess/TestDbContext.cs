@@ -9,22 +9,22 @@ using NND.CA.Common.Model;
 
 // TODO: remove the magic letter for connection string: 
 
-namespace NND.CA.Common.Web.DBAccess
-{
+//namespace NND.CA.Common.Web.DBAccess
+//{
 
-    /// <summary>
-    /// 
-    /// </summary>
-    public class TestDbContext : BaseDbContext
-    {
-        public const string TestDbContextConnectionString = "name=TestDataModelDbContextString";
+//    /// <summary>
+//    /// 
+//    /// </summary>
+//    public class TestDbContext : BaseDbContext
+//    {
+//        public const string TestDbContextConnectionString = "name=TestDataModelDbContextString";
 
-        public TestDbContext() : base(TestDbContextConnectionString)
-        {
-            //Database.SetInitializer<TestDbContext>();
-        }
+//        public TestDbContext() : base(TestDbContextConnectionString)
+//        {
+//            //Database.SetInitializer<TestDbContext>();
+//        }
 
-        public DbSet<TestDataModel> TestDataModels { get; set; }
+//        public DbSet<TestDataModel> TestDataModels { get; set; }
 
-    }
-}
+//    }
+//}

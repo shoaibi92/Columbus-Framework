@@ -22,5 +22,10 @@ namespace NND.CA.Common.Web.DBAccess
         /// LiveChatWebApiDataModel table in the Sherk DataBase
         /// </summary>
         public DbSet<LiveChatWebApiDataModel> LiveChatWebApiDataModels { get; set; }
+
+        /// <summary>
+        /// CallTrackingMatrixWebApiDataModel
+        /// </summary>
+      //  public DbSet<CallTrackingMatrixWebApiDataModel> CallTrackingMatrixWebApiDataModels { get; set; }
     }
 }
