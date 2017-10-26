@@ -151,10 +151,12 @@
     <Compile Include="Customization\Grid.cs" />
     <Compile Include="Customization\Screen.cs" />
     <Compile Include="Customization\ValidationProvider.cs" />
+    <Compile Include="DBAccess\GoogleDataModel.cs" />
     <Compile Include="DBAccess\ShrekDbContext.cs" />
     <Compile Include="DBAccess\TestDbContext.cs" />
     <Compile Include="ExportImport\BaseExportImportControllerInternal.cs" />
     <Compile Include="InternalControllerBase.cs" />
+    <Compile Include="Menu\MenuDataModel.cs" />
     <Compile Include="MultitenantControllerBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AreaContants\Shared.cs" />
