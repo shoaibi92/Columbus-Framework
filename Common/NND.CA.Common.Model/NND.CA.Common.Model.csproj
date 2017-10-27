@@ -662,12 +662,18 @@
     <Compile Include="EntityError.cs" />
     <Compile Include="EnumItem.cs" />
     <Compile Include="Enums\BussinessRepoStatusType.cs" />
+    <Compile Include="Enums\MethodType.cs" />
+    <Compile Include="Enums\ControllerAction.cs" />
+    <Compile Include="Enums\ScreenNameLocalized.cs" />
+    <Compile Include="Enums\MenuType.cs" />
+    <Compile Include="Enums\UserAuthenticationMethod.cs" />
     <Compile Include="Enums\SecurityType.cs" />
     <Compile Include="Enums\WorkStatusType.cs" />
     <Compile Include="EnumUtility.cs" />
     <Compile Include="EnumValue.cs" />
     <Compile Include="IgnoreDataMemberAttribute.cs" />
     <Compile Include="JsonNetResult.cs" />
+    <Compile Include="MenuItem.cs" />
     <Compile Include="ModelBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Screen.cs" />
@@ -675,6 +681,7 @@
     <Compile Include="ScreenName.cs" />
     <Compile Include="SelectList.cs" />
     <Compile Include="StoredAsChar.cs" />
+    <Compile Include="StringValue.cs" />
     <Compile Include="TestDataModel.cs" />
     <Compile Include="UnitOfWorkInstance.cs" />
     <Compile Include="UnitOfWorkKind.cs" />
@@ -689,6 +696,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <Compile Include="SystemUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseModels\NND.CA.WebApi\IncomingDataModelsFromThirdPartyBaseModel.cs" />

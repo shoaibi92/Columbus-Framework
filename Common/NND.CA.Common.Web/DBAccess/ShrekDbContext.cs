@@ -23,9 +23,11 @@ namespace NND.CA.Common.Web.DBAccess
         /// </summary>
         public DbSet<LiveChatWebApiDataModel> LiveChatWebApiDataModels { get; set; }
 
+        public DbSet<GoogleDataModel> GoogleUserModels { get; set; }
+
         /// <summary>
         /// CallTrackingMatrixWebApiDataModel
         /// </summary>
-      //  public DbSet<CallTrackingMatrixWebApiDataModel> CallTrackingMatrixWebApiDataModels { get; set; }
+        public DbSet<CallTrackingMatrixWebApiDataModel> CallTrackingMatrixWebApiDataModels { get; set; }
     }
 }
