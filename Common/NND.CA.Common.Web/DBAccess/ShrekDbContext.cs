@@ -1,4 +1,5 @@
-﻿using NND.CA.Common.Web.ServiceReferences;
+﻿using NND.CA.Common.Model.Authentication;
+using NND.CA.Common.Web.ServiceReferences;
 using NND.WebApi.Models.Resources;
 using System.Data.Entity;
 
@@ -29,5 +30,13 @@ namespace NND.CA.Common.Web.DBAccess
         /// CallTrackingMatrixWebApiDataModel
         /// </summary>
         public DbSet<CallTrackingMatrixWebApiDataModel> CallTrackingMatrixWebApiDataModels { get; set; }
+
+        /// <summary>
+        /// This is the data model for the NND User 
+        /// Author: Kian D.Rad
+        /// Data Nov 10th 2017
+        /// README: using this as a test user model 
+        /// </summary>
+        public virtual DbSet<NNDUser> NNDUsers { get; set; }
     }
 }
