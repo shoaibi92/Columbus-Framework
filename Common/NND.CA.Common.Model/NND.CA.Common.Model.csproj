@@ -154,7 +154,7 @@
     <Compile Include="ApplicationType.cs" />
     <Compile Include="Attributes\IgnorePreferencesAttribute.cs" />
     <Compile Include="Attributes\IsMvcSpecificAttribute.cs" />
-    <Compile Include="Authentication\NNDRoles.cs" />
+    <Compile Include="Enums\NNDRoles.cs" />
     <Compile Include="Authentication\NNDUser.cs" />
     <Compile Include="BaseModel.cs" />
     <Compile Include="BaseModelContext.cs" />
